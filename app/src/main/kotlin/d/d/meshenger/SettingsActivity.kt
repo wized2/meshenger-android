@@ -633,6 +633,7 @@ class SettingsActivity : BaseActivity(), ServiceConnection {
         val spinner = findViewById<Spinner>(spinnerId)
         val spinnerAdapter = ArrayAdapter.createFromResource(this, arrayId, R.layout.spinner_item_settings)
         spinnerAdapter.setDropDownViewResource(R.layout.spinner_dropdown_item_settings)
+        spinner.setPopupBackgroundResource(R.drawable.m3_popup_background)
 
         spinner.adapter = spinnerAdapter
         spinner.setSelection(arrayValues.indexOf(currentValue))

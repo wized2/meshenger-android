@@ -41,6 +41,13 @@
         <item name="materialCardViewStyle">@style/Widget.Meshenger.Card</item>
         <item name="alertDialogTheme">@style/AlertDialogTheme</item>
         <item name="materialAlertDialogTheme">@style/AlertDialogTheme</item>
+        <item name="popupMenuStyle">@style/Widget.Meshenger.PopupMenu</item>
+        <item name="android:popupMenuStyle">@style/Widget.Meshenger.PopupMenu</item>
+        <item name="actionOverflowMenuStyle">@style/Widget.Meshenger.PopupMenu.Overflow</item>
+        <item name="popupMenuBackground">@drawable/m3_popup_background</item>
+        <item name="textAppearanceLargePopupMenu">@style/TextAppearance.Material3.BodyLarge</item>
+        <item name="textAppearanceSmallPopupMenu">@style/TextAppearance.Material3.BodyMedium</item>
+        <item name="actionOverflowButtonStyle">@style/Widget.AppCompat.ActionButton.Overflow</item>
         <item name="android:textColorPrimary">@color/m3_on_surface</item>
         <item name="android:textColorSecondary">@color/m3_on_surface_variant</item>
         <item name="selectedColor">#A8C7FF</item>

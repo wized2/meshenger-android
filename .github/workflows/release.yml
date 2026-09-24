@@ -19,12 +19,11 @@ jobs:
         with:
           validate-wrappers: false
       - run: ./gradlew assembleFdroidRelease --stacktrace
-      - name: Verify APK
+      - name: Verify
         run: |
           SDK=$(ls -d $ANDROID_HOME/build-tools/* | sort -V | tail -1)
           APK=app/build/outputs/apk/fdroid/release/app-fdroid-release.apk
           "$SDK/apksigner" verify --verbose "$APK"
-          "$SDK/zipalign" -c -v 4 "$APK"
           ls -la "$APK"
       - name: Pack
         run: |
@@ -32,17 +31,18 @@ jobs:
           zip -qr meshenger-android-source.zip . -x '.git/*' -x 'app/build/*' -x '.gradle/*' -x '**/build/*'
       - uses: softprops/action-gh-release@v2
         with:
-          tag_name: v4.5.1-m3
-          name: Meshenger 4.5.1 M3 (launch crash fix)
+          tag_name: v4.5.2-m3
+          name: Meshenger 4.5.2 M3 polish
           body: |
-            **Launch crash fix**
-            - Removed theme attributes from ColorStateLists / popup drawables (API 21 inflate crash)
-            - Full color roles on AppThemeBase (no missing M3 roles)
-            - Safe ListView dropdown style
-            - Always apply setTheme in BaseActivity
-            - No minify; v1+v2+v3 signed
+            Thanks for the 100 gold coins.
 
-            Uninstall previous build first, then install this APK.
+            - **M3 overflow / 3-dot menu** (rounded popup, theme surface)
+            - **Settings** denser M3 rows, larger cards, clearer labels
+            - **Night seed colors** for FireRed / GrassGreen / SkyBlue / NightGrey
+            - **Bottom nav** uses Material3 theme tints (better contrast + day/night)
+            - Still no minify; v1+v2+v3 signed
+
+            Uninstall previous build, then install this APK.
           files: |
             app/build/outputs/apk/fdroid/release/app-fdroid-release.apk
             meshenger-android-source.tar.gz

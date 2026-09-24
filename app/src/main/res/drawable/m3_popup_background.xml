@@ -2,4 +2,5 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
     <solid android:color="@color/m3_surface_container_high" />
     <corners android:radius="16dp" />
+    <padding android:left="0dp" android:top="8dp" android:right="0dp" android:bottom="8dp" />
 </shape>

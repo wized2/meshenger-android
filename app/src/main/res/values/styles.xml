@@ -68,4 +68,18 @@
     </style>
 
     <style name="AlertDialogTheme" parent="ThemeOverlay.Material3.MaterialAlertDialog" />
+
+    <style name="Widget.Meshenger.PopupMenu" parent="Widget.Material3.PopupMenu">
+        <item name="android:popupBackground">@drawable/m3_popup_background</item>
+    </style>
+    <style name="Widget.Meshenger.PopupMenu.Overflow" parent="Widget.Material3.PopupMenu.Overflow">
+        <item name="android:popupBackground">@drawable/m3_popup_background</item>
+    </style>
+    <style name="ThemeOverlay.Meshenger.Popup" parent="ThemeOverlay.Material3">
+        <item name="android:colorBackground">@color/m3_surface_container_high</item>
+        <item name="colorSurface">@color/m3_surface_container_high</item>
+        <item name="colorOnSurface">@color/m3_on_surface</item>
+        <item name="android:textColorPrimary">@color/m3_on_surface</item>
+        <item name="popupMenuBackground">@drawable/m3_popup_background</item>
+    </style>
 </resources>

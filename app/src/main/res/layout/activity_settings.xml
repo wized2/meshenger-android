@@ -49,13 +49,14 @@
             android:orientation="vertical">
 
                             <com.google.android.material.card.MaterialCardView
+                android:layout_marginTop="8dp"
                 android:id="@+id/basicSettingsCard"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
-                android:layout_marginBottom="12dp"
+                android:layout_marginBottom="16dp"
                 app:cardBackgroundColor="?attr/colorSurfaceContainer"
-                app:cardCornerRadius="20dp"
+                app:cardCornerRadius="24dp"
                 app:cardElevation="0dp"
                 app:strokeWidth="0dp">
                 <LinearLayout
@@ -69,7 +70,10 @@
                     android:id="@+id/nameLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/padding_20"
+        android:minHeight="56dp"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="10dp"
+                    android:gravity="center_vertical"
                     android:orientation="horizontal">
 
                     <TextView
@@ -78,7 +82,7 @@
                         android:fontFamily="@font/lato_bold"
                         android:text="@string/settings_name"
                         android:textColor="?attr/colorOnSurface"
-                        android:textSize="@dimen/title_text_size" />
+                        android:textSize="16sp" />
 
                     <TextView
                         android:id="@+id/nameTv"
@@ -89,7 +93,7 @@
                         android:paddingStart="10dp"
                         android:fontFamily="@font/lato_regular"
                         android:textColor="?attr/colorPrimary"
-                        android:textSize="@dimen/options_text_size" />
+                        android:textSize="14sp" />
 
                 </LinearLayout>
 <RelativeLayout
@@ -97,8 +101,8 @@
                     android:layout_height="wrap_content"
                     android:minHeight="56dp"
                     android:paddingHorizontal="16dp"
-                    android:paddingVertical="4dp"
-                    >
+                    android:paddingVertical="10dp"
+                    android:gravity="center_vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -108,7 +112,7 @@
                         android:fontFamily="@font/lato_bold"
                         android:text="@string/settings_nightmode"
                         android:textColor="?attr/colorOnSurface"
-                        android:textSize="@dimen/title_text_size" />
+                        android:textSize="16sp" />
 
                     <Spinner
                         android:id="@+id/spinnerNightModes"
@@ -116,7 +120,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentTop="true"
                         android:layout_alignParentEnd="true"
-                        android:textSize="@dimen/options_text_size" />
+                        android:textSize="14sp" />
 
                 </RelativeLayout>
 <RelativeLayout
@@ -124,8 +128,8 @@
                     android:layout_height="wrap_content"
                     android:minHeight="56dp"
                     android:paddingHorizontal="16dp"
-                    android:paddingVertical="4dp"
-                    >
+                    android:paddingVertical="10dp"
+                    android:gravity="center_vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -135,7 +139,7 @@
                         android:fontFamily="@font/lato_bold"
                         android:text="@string/settings_theme_name"
                         android:textColor="?attr/colorOnSurface"
-                        android:textSize="@dimen/title_text_size" />
+                        android:textSize="16sp" />
 
                     <Spinner
                         android:id="@+id/themeName"
@@ -143,7 +147,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentTop="true"
                         android:layout_alignParentEnd="true"
-                        android:textSize="@dimen/options_text_size" />
+                        android:textSize="14sp" />
 
                 </RelativeLayout>
 <RelativeLayout
@@ -151,8 +155,8 @@
                     android:layout_height="wrap_content"
                     android:minHeight="56dp"
                     android:paddingHorizontal="16dp"
-                    android:paddingVertical="4dp"
-                    >
+                    android:paddingVertical="10dp"
+                    android:gravity="center_vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -162,7 +166,7 @@
                         android:fontFamily="@font/lato_bold"
                         android:text="@string/settings_block_unknown"
                         android:textColor="?attr/colorOnSurface"
-                        android:textSize="@dimen/title_text_size" />
+                        android:textSize="16sp" />
 
                     <com.google.android.material.switchmaterial.SwitchMaterial
                         android:id="@+id/blockUnknownSwitch"
@@ -187,7 +191,7 @@
                         android:fontFamily="@font/lato_bold"
                         android:text="@string/settings_addresses"
                         android:textColor="?attr/colorOnSurface"
-                        android:textSize="@dimen/title_text_size" />
+                        android:textSize="16sp" />
 
                     <TextView
                         android:id="@+id/addressTv"
@@ -198,7 +202,7 @@
                         android:paddingStart="10dp"
                         android:fontFamily="@font/lato_regular"
                         android:textColor="?attr/colorPrimary"
-                        android:textSize="@dimen/options_text_size" />
+                        android:textSize="14sp" />
 
                 </LinearLayout>
 <RelativeLayout
@@ -206,8 +210,8 @@
                     android:layout_height="wrap_content"
                     android:minHeight="56dp"
                     android:paddingHorizontal="16dp"
-                    android:paddingVertical="4dp"
-                    >
+                    android:paddingVertical="10dp"
+                    android:gravity="center_vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -217,7 +221,7 @@
                         android:fontFamily="@font/lato_bold"
                         android:text="@string/settings_start_on_bootup"
                         android:textColor="?attr/colorOnSurface"
-                        android:textSize="@dimen/title_text_size" />
+                        android:textSize="16sp" />
 
                     <com.google.android.material.switchmaterial.SwitchMaterial
                         android:id="@+id/startOnBootupSwitch"
@@ -234,8 +238,8 @@
                     android:layout_height="wrap_content"
                     android:minHeight="56dp"
                     android:paddingHorizontal="16dp"
-                    android:paddingVertical="4dp"
-                    >
+                    android:paddingVertical="10dp"
+                    android:gravity="center_vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -245,7 +249,7 @@
                         android:fontFamily="@font/lato_bold"
                         android:text="@string/settings_settings_mode"
                         android:textColor="?attr/colorOnSurface"
-                        android:textSize="@dimen/title_text_size" />
+                        android:textSize="16sp" />
 
                     <Spinner
                         android:id="@+id/spinnerSettingsModes"
@@ -254,7 +258,7 @@
                         android:layout_alignParentTop="true"
                         android:layout_alignParentEnd="true"
                         app:thumbTint="?attr/selectedColor"
-                        android:textSize="@dimen/options_text_size" />
+                        android:textSize="14sp" />
 
                 </RelativeLayout>
 
@@ -266,9 +270,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
-                android:layout_marginBottom="12dp"
+                android:layout_marginBottom="16dp"
                 app:cardBackgroundColor="?attr/colorSurfaceContainer"
-                app:cardCornerRadius="20dp"
+                app:cardCornerRadius="24dp"
                 app:cardElevation="0dp"
                 app:strokeWidth="0dp"
                 android:visibility="gone">
@@ -283,8 +287,8 @@
                     android:layout_height="wrap_content"
                     android:minHeight="56dp"
                     android:paddingHorizontal="16dp"
-                    android:paddingVertical="4dp"
-                    >
+                    android:paddingVertical="10dp"
+                    android:gravity="center_vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -294,7 +298,7 @@
                         android:fontFamily="@font/lato_bold"
                         android:text="@string/settings_automatic_status_updates"
                         android:textColor="?attr/colorOnSurface"
-                        android:textSize="@dimen/title_text_size" />
+                        android:textSize="16sp" />
 
                     <com.google.android.material.switchmaterial.SwitchMaterial
                         android:id="@+id/automaticStatusUpdatesSwitch"
@@ -311,8 +315,8 @@
                     android:layout_height="wrap_content"
                     android:minHeight="56dp"
                     android:paddingHorizontal="16dp"
-                    android:paddingVertical="4dp"
-                    >
+                    android:paddingVertical="10dp"
+                    android:gravity="center_vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -322,7 +326,7 @@
                         android:fontFamily="@font/lato_bold"
                         android:text="@string/settings_enable_microphone_by_default"
                         android:textColor="?attr/colorOnSurface"
-                        android:textSize="@dimen/title_text_size" />
+                        android:textSize="16sp" />
 
                     <com.google.android.material.switchmaterial.SwitchMaterial
                         android:id="@+id/enableMicrophoneByDefaultSwitch"
@@ -339,8 +343,8 @@
                     android:layout_height="wrap_content"
                     android:minHeight="56dp"
                     android:paddingHorizontal="16dp"
-                    android:paddingVertical="4dp"
-                    >
+                    android:paddingVertical="10dp"
+                    android:gravity="center_vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -350,7 +354,7 @@
                         android:fontFamily="@font/lato_bold"
                         android:text="@string/settings_enable_camera_by_default"
                         android:textColor="?attr/colorOnSurface"
-                        android:textSize="@dimen/title_text_size" />
+                        android:textSize="16sp" />
 
                     <com.google.android.material.switchmaterial.SwitchMaterial
                         android:id="@+id/enableCameraByDefaultSwitch"
@@ -367,8 +371,8 @@
                     android:layout_height="wrap_content"
                     android:minHeight="56dp"
                     android:paddingHorizontal="16dp"
-                    android:paddingVertical="4dp"
-                    >
+                    android:paddingVertical="10dp"
+                    android:gravity="center_vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -378,7 +382,7 @@
                         android:fontFamily="@font/lato_bold"
                         android:text="@string/settings_select_front_camera_by_default"
                         android:textColor="?attr/colorOnSurface"
-                        android:textSize="@dimen/title_text_size" />
+                        android:textSize="16sp" />
 
                     <com.google.android.material.switchmaterial.SwitchMaterial
                         android:id="@+id/selectFrontCameraByDefaultSwitch"
@@ -395,8 +399,8 @@
                     android:layout_height="wrap_content"
                     android:minHeight="56dp"
                     android:paddingHorizontal="16dp"
-                    android:paddingVertical="4dp"
-                    >
+                    android:paddingVertical="10dp"
+                    android:gravity="center_vertical">
 
                     <TextView
                         android:id="@+id/videoDegradationModeText"
@@ -407,7 +411,7 @@
                         android:fontFamily="@font/lato_bold"
                         android:text="@string/settings_video_degradation_mode"
                         android:textColor="?attr/colorOnSurface"
-                        android:textSize="@dimen/title_text_size" />
+                        android:textSize="16sp" />
 
                     <Spinner
                         android:id="@+id/spinnerVideoDegradationModes"
@@ -416,7 +420,7 @@
                         android:layout_alignParentTop="true"
                         android:layout_alignParentEnd="true"
                         android:drawSelectorOnTop="false"
-                        android:textSize="@dimen/options_text_size" />
+                        android:textSize="14sp" />
 
                 </RelativeLayout>
 <RelativeLayout
@@ -424,8 +428,8 @@
                     android:layout_height="wrap_content"
                     android:minHeight="56dp"
                     android:paddingHorizontal="16dp"
-                    android:paddingVertical="4dp"
-                    >
+                    android:paddingVertical="10dp"
+                    android:gravity="center_vertical">
 
                     <TextView
                         android:id="@+id/cameraResolutionText"
@@ -436,7 +440,7 @@
                         android:fontFamily="@font/lato_bold"
                         android:text="@string/settings_camera_resolution"
                         android:textColor="?attr/colorOnSurface"
-                        android:textSize="@dimen/title_text_size" />
+                        android:textSize="16sp" />
 
                     <Spinner
                         android:id="@+id/spinnerCameraResolution"
@@ -444,7 +448,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentTop="true"
                         android:layout_alignParentEnd="true"
-                        android:textSize="@dimen/options_text_size" />
+                        android:textSize="14sp" />
 
                 </RelativeLayout>
 <RelativeLayout
@@ -452,8 +456,8 @@
                     android:layout_height="wrap_content"
                     android:minHeight="56dp"
                     android:paddingHorizontal="16dp"
-                    android:paddingVertical="4dp"
-                    >
+                    android:paddingVertical="10dp"
+                    android:gravity="center_vertical">
 
                     <TextView
                         android:id="@+id/cameraFramerateText"
@@ -464,7 +468,7 @@
                         android:fontFamily="@font/lato_bold"
                         android:text="@string/settings_camera_framerate"
                         android:textColor="?attr/colorOnSurface"
-                        android:textSize="@dimen/title_text_size" />
+                        android:textSize="16sp" />
 
                     <Spinner
                         android:id="@+id/spinnerCameraFramerate"
@@ -472,7 +476,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentTop="true"
                         android:layout_alignParentEnd="true"
-                        android:textSize="@dimen/options_text_size" />
+                        android:textSize="14sp" />
 
                 </RelativeLayout>
 <RelativeLayout
@@ -490,7 +494,7 @@
                         android:fontFamily="@font/lato_bold"
                         android:text="@string/settings_audio_bitrate_max"
                         android:textColor="?attr/colorOnSurface"
-                        android:textSize="@dimen/title_text_size" />
+                        android:textSize="16sp" />
 
                     <Spinner
                         android:id="@+id/spinnerAudioBitrateMax"
@@ -498,7 +502,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentTop="true"
                         android:layout_alignParentEnd="true"
-                        android:textSize="@dimen/options_text_size" />
+                        android:textSize="14sp" />
 
                 </RelativeLayout>
 <RelativeLayout
@@ -516,7 +520,7 @@
                         android:fontFamily="@font/lato_bold"
                         android:text="@string/settings_video_bitrate_max"
                         android:textColor="?attr/colorOnSurface"
-                        android:textSize="@dimen/title_text_size" />
+                        android:textSize="16sp" />
 
                     <Spinner
                         android:id="@+id/spinnerVideoBitrateMax"
@@ -524,7 +528,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentTop="true"
                         android:layout_alignParentEnd="true"
-                        android:textSize="@dimen/options_text_size" />
+                        android:textSize="14sp" />
 
                 </RelativeLayout>
 <RelativeLayout
@@ -532,8 +536,8 @@
                     android:layout_height="wrap_content"
                     android:minHeight="56dp"
                     android:paddingHorizontal="16dp"
-                    android:paddingVertical="4dp"
-                    >
+                    android:paddingVertical="10dp"
+                    android:gravity="center_vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -543,7 +547,7 @@
                         android:fontFamily="@font/lato_bold"
                         android:text="@string/settings_prompt_outgoing_calls"
                         android:textColor="?attr/colorOnSurface"
-                        android:textSize="@dimen/title_text_size" />
+                        android:textSize="16sp" />
 
                     <com.google.android.material.switchmaterial.SwitchMaterial
                         android:id="@+id/promptOutgoingCallsSwitch"
@@ -560,8 +564,8 @@
                     android:layout_height="wrap_content"
                     android:minHeight="56dp"
                     android:paddingHorizontal="16dp"
-                    android:paddingVertical="4dp"
-                    >
+                    android:paddingVertical="10dp"
+                    android:gravity="center_vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -571,7 +575,7 @@
                         android:fontFamily="@font/lato_bold"
                         android:text="@string/settings_show_username_as_logo"
                         android:textColor="?attr/colorOnSurface"
-                        android:textSize="@dimen/title_text_size" />
+                        android:textSize="16sp" />
 
                     <com.google.android.material.switchmaterial.SwitchMaterial
                         android:id="@+id/showUsernameAsLogoSwitch"
@@ -588,8 +592,8 @@
                     android:layout_height="wrap_content"
                     android:minHeight="56dp"
                     android:paddingHorizontal="16dp"
-                    android:paddingVertical="4dp"
-                    >
+                    android:paddingVertical="10dp"
+                    android:gravity="center_vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -599,7 +603,7 @@
                         android:fontFamily="@font/lato_bold"
                         android:text="@string/settings_push_to_talk"
                         android:textColor="?attr/colorOnSurface"
-                        android:textSize="@dimen/title_text_size" />
+                        android:textSize="16sp" />
 
                     <com.google.android.material.switchmaterial.SwitchMaterial
                         android:id="@+id/pushToTalkSwitch"
@@ -616,8 +620,8 @@
                     android:layout_height="wrap_content"
                     android:minHeight="56dp"
                     android:paddingHorizontal="16dp"
-                    android:paddingVertical="4dp"
-                    >
+                    android:paddingVertical="10dp"
+                    android:gravity="center_vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -627,7 +631,7 @@
                         android:fontFamily="@font/lato_bold"
                         android:text="@string/settings_speakerphone_mode"
                         android:textColor="?attr/colorOnSurface"
-                        android:textSize="@dimen/title_text_size" />
+                        android:textSize="16sp" />
 
                     <Spinner
                         android:id="@+id/spinnerSpeakerphoneModes"
@@ -636,13 +640,17 @@
                         android:layout_alignParentTop="true"
                         android:layout_alignParentEnd="true"
                         app:thumbTint="?attr/selectedColor"
-                        android:textSize="@dimen/options_text_size" />
+                        android:textSize="14sp" />
 
                 </RelativeLayout>
 <LinearLayout
                     android:id="@+id/databasePasswordLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+        android:minHeight="56dp"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="10dp"
+                    android:gravity="center_vertical"
                     android:orientation="horizontal">
 
                     <TextView
@@ -651,7 +659,7 @@
                         android:fontFamily="@font/lato_bold"
                         android:text="@string/settings_database_password"
                         android:textColor="?attr/colorOnSurface"
-                        android:textSize="@dimen/title_text_size" />
+                        android:textSize="16sp" />
 
                     <TextView
                         android:id="@+id/databasePasswordTv"
@@ -661,13 +669,17 @@
                         android:paddingRight="10dp"
                         android:fontFamily="@font/lato_regular"
                         android:textColor="?attr/colorPrimary"
-                        android:textSize="@dimen/options_text_size" />
+                        android:textSize="14sp" />
 
                 </LinearLayout>
 <LinearLayout
                     android:id="@+id/menuPasswordLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+        android:minHeight="56dp"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="10dp"
+                    android:gravity="center_vertical"
                     android:orientation="horizontal">
 
                     <TextView
@@ -676,7 +688,7 @@
                         android:fontFamily="@font/lato_bold"
                         android:text="@string/settings_menu_password"
                         android:textColor="?attr/colorOnSurface"
-                        android:textSize="@dimen/title_text_size" />
+                        android:textSize="16sp" />
 
                     <TextView
                         android:id="@+id/menuPasswordTv"
@@ -687,7 +699,7 @@
                         android:paddingStart="10dp"
                         android:fontFamily="@font/lato_regular"
                         android:textColor="?attr/colorPrimary"
-                        android:textSize="@dimen/options_text_size" />
+                        android:textSize="14sp" />
 
                 </LinearLayout>
 <RelativeLayout
@@ -695,8 +707,8 @@
                     android:layout_height="wrap_content"
                     android:minHeight="56dp"
                     android:paddingHorizontal="16dp"
-                    android:paddingVertical="4dp"
-                    >
+                    android:paddingVertical="10dp"
+                    android:gravity="center_vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -706,7 +718,7 @@
                         android:fontFamily="@font/lato_bold"
                         android:text="@string/settings_hide_menus"
                         android:textColor="?attr/colorOnSurface"
-                        android:textSize="@dimen/title_text_size" />
+                        android:textSize="16sp" />
 
                     <com.google.android.material.switchmaterial.SwitchMaterial
                         android:id="@+id/hideMenusSwitch"
@@ -723,8 +735,8 @@
                     android:layout_height="wrap_content"
                     android:minHeight="56dp"
                     android:paddingHorizontal="16dp"
-                    android:paddingVertical="4dp"
-                    >
+                    android:paddingVertical="10dp"
+                    android:gravity="center_vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -734,7 +746,7 @@
                         android:fontFamily="@font/lato_bold"
                         android:text="@string/settings_disable_call_history"
                         android:textColor="?attr/colorOnSurface"
-                        android:textSize="@dimen/title_text_size" />
+                        android:textSize="16sp" />
 
                     <com.google.android.material.switchmaterial.SwitchMaterial
                         android:id="@+id/disableCallHistorySwitch"
@@ -751,8 +763,8 @@
                     android:layout_height="wrap_content"
                     android:minHeight="56dp"
                     android:paddingHorizontal="16dp"
-                    android:paddingVertical="4dp"
-                    >
+                    android:paddingVertical="10dp"
+                    android:gravity="center_vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -762,7 +774,7 @@
                         android:fontFamily="@font/lato_bold"
                         android:text="@string/settings_disable_proximity_sensor"
                         android:textColor="?attr/colorOnSurface"
-                        android:textSize="@dimen/title_text_size" />
+                        android:textSize="16sp" />
 
                     <com.google.android.material.switchmaterial.SwitchMaterial
                         android:id="@+id/disableProximitySensorSwitch"
@@ -783,9 +795,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
-                android:layout_marginBottom="12dp"
+                android:layout_marginBottom="16dp"
                 app:cardBackgroundColor="?attr/colorSurfaceContainer"
-                app:cardCornerRadius="20dp"
+                app:cardCornerRadius="24dp"
                 app:cardElevation="0dp"
                 app:strokeWidth="0dp"
                 android:visibility="gone">
@@ -800,8 +812,8 @@
                     android:layout_height="wrap_content"
                     android:minHeight="56dp"
                     android:paddingHorizontal="16dp"
-                    android:paddingVertical="4dp"
-                    >
+                    android:paddingVertical="10dp"
+                    android:gravity="center_vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -811,7 +823,7 @@
                         android:fontFamily="@font/lato_bold"
                         android:text="@string/settings_auto_accept_calls"
                         android:textColor="?attr/colorOnSurface"
-                        android:textSize="@dimen/title_text_size" />
+                        android:textSize="16sp" />
 
                     <com.google.android.material.switchmaterial.SwitchMaterial
                         android:id="@+id/autoAcceptCallsSwitch"
@@ -828,8 +840,8 @@
                     android:layout_height="wrap_content"
                     android:minHeight="56dp"
                     android:paddingHorizontal="16dp"
-                    android:paddingVertical="4dp"
-                    >
+                    android:paddingVertical="10dp"
+                    android:gravity="center_vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -839,7 +851,7 @@
                         android:fontFamily="@font/lato_bold"
                         android:text="@string/settings_skip_startup_permission_check"
                         android:textColor="?attr/colorOnSurface"
-                        android:textSize="@dimen/title_text_size" />
+                        android:textSize="16sp" />
 
                     <com.google.android.material.switchmaterial.SwitchMaterial
                         android:id="@+id/skipStartupPermissionCheckSwitch"
@@ -856,8 +868,8 @@
                     android:layout_height="wrap_content"
                     android:minHeight="56dp"
                     android:paddingHorizontal="16dp"
-                    android:paddingVertical="4dp"
-                    >
+                    android:paddingVertical="10dp"
+                    android:gravity="center_vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -867,7 +879,7 @@
                         android:fontFamily="@font/lato_bold"
                         android:text="@string/settings_disable_cpu_overuse_detection"
                         android:textColor="?attr/colorOnSurface"
-                        android:textSize="@dimen/title_text_size" />
+                        android:textSize="16sp" />
 
                     <com.google.android.material.switchmaterial.SwitchMaterial
                         android:id="@+id/disableCpuOveruseDetectionSwitch"
@@ -891,7 +903,7 @@
                         android:fontFamily="@font/lato_bold"
                         android:text="@string/settings_public_key"
                         android:textColor="?attr/colorOnSurface"
-                        android:textSize="@dimen/title_text_size" />
+                        android:textSize="16sp" />
 
                     <TextView
                         android:id="@+id/publicKeyTv"
@@ -904,7 +916,7 @@
                         android:textIsSelectable="true"
                         android:text=""
                         android:textColor="?attr/colorPrimary"
-                        android:textSize="@dimen/options_text_size" />
+                        android:textSize="14sp" />
 
                 </LinearLayout>
 <RelativeLayout
@@ -912,8 +924,8 @@
                     android:layout_height="wrap_content"
                     android:minHeight="56dp"
                     android:paddingHorizontal="16dp"
-                    android:paddingVertical="4dp"
-                    >
+                    android:paddingVertical="10dp"
+                    android:gravity="center_vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -923,7 +935,7 @@
                         android:fontFamily="@font/lato_bold"
                         android:text="@string/settings_disable_audio_processing"
                         android:textColor="?attr/colorOnSurface"
-                        android:textSize="@dimen/title_text_size" />
+                        android:textSize="16sp" />
 
                     <com.google.android.material.switchmaterial.SwitchMaterial
                         android:id="@+id/disableAudioProcessingSwitch"
@@ -940,8 +952,8 @@
                     android:layout_height="wrap_content"
                     android:minHeight="56dp"
                     android:paddingHorizontal="16dp"
-                    android:paddingVertical="4dp"
-                    >
+                    android:paddingVertical="10dp"
+                    android:gravity="center_vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -951,7 +963,7 @@
                         android:fontFamily="@font/lato_bold"
                         android:text="@string/settings_video_hardware_acceleration"
                         android:textColor="?attr/colorOnSurface"
-                        android:textSize="@dimen/title_text_size" />
+                        android:textSize="16sp" />
 
                     <com.google.android.material.switchmaterial.SwitchMaterial
                         android:id="@+id/videoHardwareAccelerationSwitch"
@@ -967,6 +979,10 @@
                     android:id="@+id/connectTimeoutLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+        android:minHeight="56dp"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="10dp"
+                    android:gravity="center_vertical"
                     android:orientation="horizontal">
 
                     <TextView
@@ -975,7 +991,7 @@
                         android:fontFamily="@font/lato_bold"
                         android:text="@string/settings_connect_timeout"
                         android:textColor="?attr/colorOnSurface"
-                        android:textSize="@dimen/title_text_size" />
+                        android:textSize="16sp" />
 
                     <TextView
                         android:id="@+id/connectTimeoutTv"
@@ -986,13 +1002,17 @@
                         android:paddingStart="10dp"
                         android:fontFamily="@font/lato_regular"
                         android:textColor="?attr/colorPrimary"
-                        android:textSize="@dimen/options_text_size" />
+                        android:textSize="14sp" />
 
                 </LinearLayout>
 <LinearLayout
                     android:id="@+id/connectRetriesLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+        android:minHeight="56dp"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="10dp"
+                    android:gravity="center_vertical"
                     android:orientation="horizontal">
 
                     <TextView
@@ -1001,7 +1021,7 @@
                         android:fontFamily="@font/lato_bold"
                         android:text="@string/settings_connect_retries"
                         android:textColor="?attr/colorOnSurface"
-                        android:textSize="@dimen/title_text_size" />
+                        android:textSize="16sp" />
 
                     <TextView
                         android:id="@+id/connectRetriesTv"
@@ -1012,7 +1032,7 @@
                         android:paddingStart="10dp"
                         android:fontFamily="@font/lato_regular"
                         android:textColor="?attr/colorPrimary"
-                        android:textSize="@dimen/options_text_size" />
+                        android:textSize="14sp" />
 
                 </LinearLayout>
 <RelativeLayout
@@ -1020,8 +1040,8 @@
                     android:layout_height="wrap_content"
                     android:minHeight="56dp"
                     android:paddingHorizontal="16dp"
-                    android:paddingVertical="4dp"
-                    >
+                    android:paddingVertical="10dp"
+                    android:gravity="center_vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -1031,7 +1051,7 @@
                         android:fontFamily="@font/lato_bold"
                         android:text="@string/settings_guess_eui64_address"
                         android:textColor="?attr/colorOnSurface"
-                        android:textSize="@dimen/title_text_size" />
+                        android:textSize="16sp" />
 
                     <com.google.android.material.switchmaterial.SwitchMaterial
                         android:id="@+id/guessEUI64AddressSwitch"
@@ -1048,8 +1068,8 @@
                     android:layout_height="wrap_content"
                     android:minHeight="56dp"
                     android:paddingHorizontal="16dp"
-                    android:paddingVertical="4dp"
-                    >
+                    android:paddingVertical="10dp"
+                    android:gravity="center_vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -1059,7 +1079,7 @@
                         android:fontFamily="@font/lato_bold"
                         android:text="@string/settings_use_neighbor_table"
                         android:textColor="?attr/colorOnSurface"
-                        android:textSize="@dimen/title_text_size" />
+                        android:textSize="16sp" />
 
                     <com.google.android.material.switchmaterial.SwitchMaterial
                         android:id="@+id/useNeighborTableSwitch"

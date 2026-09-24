@@ -49,6 +49,7 @@ class MainActivity : BaseActivity(), ServiceConnection {
             setNavigationOnClickListener {
                 finish()
             }
+            popupTheme = R.style.ThemeOverlay_Meshenger_Popup
         }
         setSupportActionBar(toolbar)
         supportActionBar?.apply {
