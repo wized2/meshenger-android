@@ -1,93 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="AppThemeBase" parent="Theme.AppCompat.DayNight">
+    <style name="AppThemeBase" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="android:dropDownListViewStyle">@style/MySpinner</item>
-
-        <!-- make the screen not overlap with the system bars -->
         <item name="android:fitsSystemWindows">true</item>
-        <item name="android:windowTranslucentStatus">true</item>
-        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">true</item>
+
+        <item name="colorSurface">@color/m3_surface</item>
+        <item name="colorOnSurface">@color/m3_on_surface</item>
+        <item name="colorOnSurfaceVariant">@color/m3_on_surface_variant</item>
+        <item name="colorSurfaceContainerLowest">@color/m3_surface_container_lowest</item>
+        <item name="colorSurfaceContainerLow">@color/m3_surface_container_low</item>
+        <item name="colorSurfaceContainer">@color/m3_surface_container</item>
+        <item name="colorSurfaceContainerHigh">@color/m3_surface_container_high</item>
+        <item name="colorSurfaceContainerHighest">@color/m3_surface_container_highest</item>
+        <item name="colorOutline">@color/m3_outline</item>
+        <item name="colorOutlineVariant">@color/m3_outline_variant</item>
+        <item name="android:colorBackground">@color/m3_surface</item>
+        <item name="colorOnBackground">@color/m3_on_surface</item>
+
+        <item name="shapeAppearanceSmallComponent">@style/Shape.Meshenger.Small</item>
+        <item name="shapeAppearanceMediumComponent">@style/Shape.Meshenger.Medium</item>
+        <item name="shapeAppearanceLargeComponent">@style/Shape.Meshenger.Large</item>
+
+        <item name="materialButtonStyle">@style/Widget.Meshenger.Button</item>
+        <item name="alertDialogTheme">@style/AlertDialogTheme</item>
+        <item name="materialAlertDialogTheme">@style/AlertDialogTheme</item>
     </style>
 
     <style name="AppTheme.FireRed" parent="AppThemeBase">
-        <item name="android:colorPrimary">#FFEC3E3E</item>
-        <item name="android:colorPrimaryDark">#B71C1C</item>
-        <item name="android:colorAccent">#FFEC3E3E</item>
-        <item name="android:textColorSecondary">#FFEC3E3E</item>
+        <item name="colorPrimary">@color/seed_fire</item>
+        <item name="colorOnPrimary">@color/seed_fire_on</item>
+        <item name="colorPrimaryContainer">@color/seed_fire_container</item>
+        <item name="colorOnPrimaryContainer">@color/seed_fire_on_container</item>
+        <item name="colorSecondary">@color/seed_fire_secondary</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorTertiary">@color/seed_fire_tertiary</item>
+        <item name="colorOnTertiary">@color/white</item>
+        <item name="colorAccent">@color/seed_fire</item>
+        <item name="android:colorPrimary">@color/seed_fire</item>
+        <item name="android:colorPrimaryDark">@color/seed_fire</item>
+        <item name="android:colorAccent">@color/seed_fire</item>
+        <item name="android:textColorSecondary">@color/seed_fire</item>
         <item name="android:buttonStyle">@style/ButtonColorFireRed</item>
-
-        <item name="selectedColor">#EC3E3F</item>
-        <item name="unselectedColor">#1AEC3E3F</item>
-
-        <item name="callButtonBackgroundColor">#FFEC3E3E</item>
-
-        <!-- main activity tabs (contacts/calls) -->
-        <item name="tabColor">#1AEC3E3F</item>
-        <item name="tabTextColor">#FFEC3E3E</item>
-        <item name="tabSelectedColor">#EC3E3F</item>
+        <item name="selectedColor">@color/seed_fire</item>
+        <item name="unselectedColor">@color/seed_fire_container</item>
+        <item name="callButtonBackgroundColor">@color/seed_fire</item>
+        <item name="tabColor">@color/seed_fire_container</item>
+        <item name="tabTextColor">@color/seed_fire_on_container</item>
+        <item name="tabSelectedColor">@color/seed_fire</item>
         <item name="tabSelectedTextColor">@color/white</item>
     </style>
 
     <style name="AppTheme.GrassGreen" parent="AppThemeBase">
-        <item name="android:colorPrimary">#8BC34A</item>
-        <item name="android:colorPrimaryDark">#3C983F</item>
-        <item name="android:colorAccent">#8BC34A</item>
-        <item name="android:textColorSecondary">#3C983F</item>
+        <item name="colorPrimary">@color/seed_grass</item>
+        <item name="colorOnPrimary">@color/seed_grass_on</item>
+        <item name="colorPrimaryContainer">@color/seed_grass_container</item>
+        <item name="colorOnPrimaryContainer">@color/seed_grass_on_container</item>
+        <item name="colorSecondary">@color/seed_grass_secondary</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorTertiary">@color/seed_grass_tertiary</item>
+        <item name="colorOnTertiary">@color/white</item>
+        <item name="colorAccent">@color/seed_grass</item>
+        <item name="android:colorPrimary">@color/seed_grass</item>
+        <item name="android:colorPrimaryDark">@color/seed_grass</item>
+        <item name="android:colorAccent">@color/seed_grass</item>
+        <item name="android:textColorSecondary">@color/seed_grass</item>
         <item name="android:buttonStyle">@style/ButtonColorGrassGreen</item>
-
-        <item name="selectedColor">#8BC34A</item>
-        <item name="unselectedColor">#3C983F</item>
-
-        <item name="callButtonBackgroundColor">#4C9C4E</item>
-
-        <!-- main activity tabs (contacts/calls) -->
-        <item name="tabColor">#D5FFA7</item>
-        <item name="tabTextColor">#3C983F</item>
-        <item name="tabSelectedColor">#8BC34A</item>
-        <item name="tabSelectedTextColor">#202D11</item>
+        <item name="selectedColor">@color/seed_grass</item>
+        <item name="unselectedColor">@color/seed_grass_container</item>
+        <item name="callButtonBackgroundColor">@color/seed_grass</item>
+        <item name="tabColor">@color/seed_grass_container</item>
+        <item name="tabTextColor">@color/seed_grass_on_container</item>
+        <item name="tabSelectedColor">@color/seed_grass</item>
+        <item name="tabSelectedTextColor">@color/seed_grass_on_container</item>
     </style>
 
     <style name="AppTheme.SkyBlue" parent="AppThemeBase">
-        <item name="android:colorPrimary">#1C5DCC</item>
-        <item name="android:colorPrimaryDark">#1C6FB7</item>
-        <item name="android:colorAccent">#184DA8</item>
-        <item name="android:textColorSecondary">#1C6FB7</item>
+        <item name="colorPrimary">@color/seed_sky</item>
+        <item name="colorOnPrimary">@color/seed_sky_on</item>
+        <item name="colorPrimaryContainer">@color/seed_sky_container</item>
+        <item name="colorOnPrimaryContainer">@color/seed_sky_on_container</item>
+        <item name="colorSecondary">@color/seed_sky_secondary</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorTertiary">@color/seed_sky_tertiary</item>
+        <item name="colorOnTertiary">@color/white</item>
+        <item name="colorAccent">@color/seed_sky</item>
+        <item name="android:colorPrimary">@color/seed_sky</item>
+        <item name="android:colorPrimaryDark">@color/seed_sky</item>
+        <item name="android:colorAccent">@color/seed_sky</item>
+        <item name="android:textColorSecondary">@color/seed_sky</item>
         <item name="android:buttonStyle">@style/ButtonColorSkyBlue</item>
-
-        <item name="selectedColor">#1C5DCC</item>
-        <item name="unselectedColor">#1C6FB7</item>
-
-        <item name="callButtonBackgroundColor">#71B2EB</item>
-
-        <!-- main activity tabs (contacts/calls) -->
-        <item name="tabColor">#1C6FB7</item>
-        <item name="tabTextColor">@color/lighter_grey</item>
-        <item name="tabSelectedColor">#1C5DCC</item>
+        <item name="selectedColor">@color/seed_sky</item>
+        <item name="unselectedColor">@color/seed_sky_container</item>
+        <item name="callButtonBackgroundColor">@color/seed_sky</item>
+        <item name="tabColor">@color/seed_sky_container</item>
+        <item name="tabTextColor">@color/seed_sky_on_container</item>
+        <item name="tabSelectedColor">@color/seed_sky</item>
         <item name="tabSelectedTextColor">@color/white</item>
     </style>
 
     <style name="AppTheme.NightGrey" parent="AppThemeBase">
-        <item name="android:colorPrimary">@color/dark_grey</item>
+        <item name="colorPrimary">@color/seed_grey</item>
+        <item name="colorOnPrimary">@color/seed_grey_on</item>
+        <item name="colorPrimaryContainer">@color/seed_grey_container</item>
+        <item name="colorOnPrimaryContainer">@color/seed_grey_on_container</item>
+        <item name="colorSecondary">@color/seed_grey_secondary</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorTertiary">@color/seed_grey_tertiary</item>
+        <item name="colorOnTertiary">@color/white</item>
+        <item name="colorAccent">@color/seed_grey</item>
+        <item name="android:colorPrimary">@color/seed_grey</item>
         <item name="android:colorPrimaryDark">@color/darker_grey</item>
-        <item name="android:colorAccent">@color/dark_grey</item>
+        <item name="android:colorAccent">@color/seed_grey</item>
         <item name="android:textColorSecondary">@color/dark_grey</item>
         <item name="android:buttonStyle">@style/ButtonColorNightGrey</item>
-
         <item name="selectedColor">@color/light_grey</item>
         <item name="unselectedColor">@color/dark_grey</item>
-
         <item name="callButtonBackgroundColor">@color/light_grey</item>
-
-        <!-- main activity tabs (contacts/calls) -->
-        <item name="tabColor">@color/light_grey</item>
-        <item name="tabTextColor">@color/dark_grey</item>
-        <item name="tabSelectedColor">@color/white</item>
-        <item name="tabSelectedTextColor">@color/black</item>
+        <item name="tabColor">@color/seed_grey_container</item>
+        <item name="tabTextColor">@color/seed_grey_on_container</item>
+        <item name="tabSelectedColor">@color/m3_on_surface</item>
+        <item name="tabSelectedTextColor">@color/m3_surface</item>
     </style>
 
-    <style name="AlertDialogTheme" parent="Theme.AppCompat.DayNight.Dialog.Alert">
-        <!-- Nothing to do for now -->
+    <style name="AlertDialogTheme" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="colorPrimary">?attr/colorPrimary</item>
+        <item name="colorSurface">?attr/colorSurfaceContainerHigh</item>
+        <item name="shapeAppearanceOverlay">@style/Shape.Meshenger.Medium</item>
     </style>
 </resources>
