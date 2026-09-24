@@ -20,4 +20,4 @@ jobs:
         with:
           validate-wrappers: false
       - name: Assemble fdroidDebug
-        run: ./gradlew assembleFdroidDebug --stacktrace
+        run: ./gradlew assembleFdroidDebug assembleFdroidRelease --stacktrace
