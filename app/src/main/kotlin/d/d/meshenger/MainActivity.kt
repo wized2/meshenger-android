@@ -251,17 +251,18 @@ class MainActivity : BaseActivity(), ServiceConnection {
     }
 
     private fun updateCallsBadge() {
-        val bottomNav = findViewById<BottomNavigationView?>(R.id.bottom_nav) ?: return
-        val missed = try { Database.getEvents().eventsMissed } catch (_: Exception) { 0 }
-        if (missed > 0 && bottomNav.visibility == View.VISIBLE) {
-            val badge = bottomNav.getOrCreateBadge(R.id.nav_calls)
-            badge.isVisible = true
-            badge.number = missed
-            val tv = TypedValue()
-            theme.resolveAttribute(com.google.android.material.R.attr.colorPrimary, tv, true)
-            badge.backgroundColor = tv.data
-        } else {
-            bottomNav.removeBadge(R.id.nav_calls)
+        try {
+            val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_nav)
+            val missed = try { Database.getEvents().eventsMissed } catch (_: Exception) { 0 }
+            if (missed > 0 && bottomNav.visibility == View.VISIBLE) {
+                val badge = bottomNav.getOrCreateBadge(R.id.nav_calls)
+                badge.isVisible = true
+                badge.number = missed
+            } else {
+                bottomNav.removeBadge(R.id.nav_calls)
+            }
+        } catch (e: Exception) {
+            Log.e(this, "updateCallsBadge: ${e.message}")
         }
     }
 

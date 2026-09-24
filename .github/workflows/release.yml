@@ -1,20 +1,15 @@
 name: Release
 on:
-  workflow_run:
-    workflows: [CI]
-    types: [completed]
+  push:
     branches: [feature/material3]
   workflow_dispatch:
 permissions:
   contents: write
 jobs:
   release:
-    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          ref: feature/material3
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
@@ -24,28 +19,30 @@ jobs:
         with:
           validate-wrappers: false
       - run: ./gradlew assembleFdroidRelease --stacktrace
-      - name: Verify + pack
+      - name: Verify APK
         run: |
           SDK=$(ls -d $ANDROID_HOME/build-tools/* | sort -V | tail -1)
           APK=app/build/outputs/apk/fdroid/release/app-fdroid-release.apk
           "$SDK/apksigner" verify --verbose "$APK"
+          "$SDK/zipalign" -c -v 4 "$APK"
+          ls -la "$APK"
+      - name: Pack
+        run: |
           git archive --format=tar.gz --prefix=meshenger-android-source/ -o meshenger-android-source.tar.gz HEAD
           zip -qr meshenger-android-source.zip . -x '.git/*' -x 'app/build/*' -x '.gradle/*' -x '**/build/*'
       - uses: softprops/action-gh-release@v2
         with:
-          tag_name: v4.5.0-m3
-          name: Meshenger 4.5.0 Material You 3
+          tag_name: v4.5.1-m3
+          name: Meshenger 4.5.1 M3 (launch crash fix)
           body: |
-            Clean rebuild from upstream + full Material You 3.
+            **Launch crash fix**
+            - Removed theme attributes from ColorStateLists / popup drawables (API 21 inflate crash)
+            - Full color roles on AppThemeBase (no missing M3 roles)
+            - Safe ListView dropdown style
+            - Always apply setTheme in BaseActivity
+            - No minify; v1+v2+v3 signed
 
-            - Theme.Material3 + FireRed / GrassGreen / SkyBlue / NightGrey seeds
-            - Bottom navigation (Contacts / Calls)
-            - Settings in Material cards
-            - Contact/event cards, M3 dialogs, FABs, toolbars
-            - **No minify** (stable launch)
-            - v1+v2+v3 signed APK
-
-            Uninstall any previous Meshenger first.
+            Uninstall previous build first, then install this APK.
           files: |
             app/build/outputs/apk/fdroid/release/app-fdroid-release.apk
             meshenger-android-source.tar.gz

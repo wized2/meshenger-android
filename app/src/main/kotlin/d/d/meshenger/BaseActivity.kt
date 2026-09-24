@@ -58,10 +58,8 @@ open class BaseActivity : AppCompatActivity() {
 
     // set theme and night mode
     override fun onCreate(savedInstanceState: Bundle?) {
-        if (currentTheme != defaultThemeName) {
-            currentTheme = defaultThemeName
-            setTheme(defaultThemeName)
-        }
+        currentTheme = defaultThemeName
+        setTheme(defaultThemeName)
 
         if (defaultNightMode != AppCompatDelegate.getDefaultNightMode()) {
             Log.d(this, "Change night mode to $defaultNightMode")

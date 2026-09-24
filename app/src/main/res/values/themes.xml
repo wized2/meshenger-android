@@ -8,30 +8,66 @@
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:navigationBarColor">@android:color/transparent</item>
         <item name="android:windowLightStatusBar">true</item>
+
+        <!-- Defaults (SkyBlue-ish) so base never has missing roles -->
+        <item name="colorPrimary">#1C5DCC</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryContainer">#D8E2FF</item>
+        <item name="colorOnPrimaryContainer">#001A41</item>
+        <item name="colorSecondary">#555F71</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorSecondaryContainer">#D8E2FF</item>
+        <item name="colorOnSecondaryContainer">#001A41</item>
+        <item name="colorTertiary">#6E5676</item>
+        <item name="colorOnTertiary">@color/white</item>
+        <item name="colorTertiaryContainer">#F2DAFF</item>
+        <item name="colorOnTertiaryContainer">#251431</item>
+        <item name="colorError">#B3261E</item>
+        <item name="colorOnError">@color/white</item>
+        <item name="colorErrorContainer">#F9DEDC</item>
+        <item name="colorOnErrorContainer">#410E0B</item>
+
         <item name="colorSurface">@color/m3_surface</item>
         <item name="colorOnSurface">@color/m3_on_surface</item>
         <item name="colorOnSurfaceVariant">@color/m3_on_surface_variant</item>
+        <item name="colorSurfaceVariant">@color/m3_surface_container_high</item>
         <item name="colorSurfaceContainer">@color/m3_surface_container</item>
         <item name="colorSurfaceContainerHigh">@color/m3_surface_container_high</item>
         <item name="colorSurfaceContainerHighest">@color/m3_surface_container_high</item>
+        <item name="colorSurfaceContainerLow">@color/m3_surface</item>
+        <item name="colorSurfaceContainerLowest">@color/white</item>
         <item name="colorOutline">@color/m3_outline</item>
         <item name="colorOutlineVariant">@color/m3_outline_variant</item>
         <item name="android:colorBackground">@color/m3_surface</item>
         <item name="colorOnBackground">@color/m3_on_surface</item>
+        <item name="colorAccent">#1C5DCC</item>
+        <item name="android:colorPrimary">#1C5DCC</item>
+        <item name="android:colorPrimaryDark">#1C6FB7</item>
+        <item name="android:colorAccent">#1C5DCC</item>
+
         <item name="shapeAppearanceSmallComponent">@style/Shape.Meshenger.Small</item>
         <item name="shapeAppearanceMediumComponent">@style/Shape.Meshenger.Medium</item>
         <item name="shapeAppearanceLargeComponent">@style/Shape.Meshenger.Large</item>
+
         <item name="toolbarStyle">@style/Widget.Meshenger.Toolbar</item>
         <item name="floatingActionButtonStyle">@style/Widget.Meshenger.Fab</item>
         <item name="materialCardViewStyle">@style/Widget.Meshenger.Card</item>
-        <item name="switchStyle">@style/Widget.Meshenger.Switch</item>
         <item name="alertDialogTheme">@style/AlertDialogTheme</item>
         <item name="materialAlertDialogTheme">@style/AlertDialogTheme</item>
-        <item name="popupMenuBackground">@drawable/m3_popup_background</item>
         <item name="colorControlActivated">?attr/colorPrimary</item>
-        <item name="android:textColorPrimary">?attr/colorOnSurface</item>
-        <item name="android:textColorSecondary">?attr/colorOnSurfaceVariant</item>
+        <item name="android:textColorPrimary">@color/m3_on_surface</item>
+        <item name="android:textColorSecondary">@color/m3_on_surface_variant</item>
+
+        <!-- custom Meshenger attrs defaults -->
+        <item name="selectedColor">#1C5DCC</item>
+        <item name="unselectedColor">#1C6FB7</item>
+        <item name="callButtonBackgroundColor">#71B2EB</item>
+        <item name="tabColor">#D8E2FF</item>
+        <item name="tabTextColor">#001A41</item>
+        <item name="tabSelectedColor">#1C5DCC</item>
+        <item name="tabSelectedTextColor">@color/white</item>
     </style>
+
     <style name="AppTheme.FireRed" parent="AppThemeBase">
         <item name="colorPrimary">#EC3E3E</item>
         <item name="colorOnPrimary">@color/white</item>
@@ -46,7 +82,6 @@
         <item name="android:colorPrimary">#EC3E3E</item>
         <item name="android:colorPrimaryDark">#B71C1C</item>
         <item name="android:colorAccent">#EC3E3E</item>
-        <item name="android:textColorSecondary">#EC3E3E</item>
         <item name="android:buttonStyle">@style/ButtonColorFireRed</item>
         <item name="selectedColor">#EC3E3F</item>
         <item name="unselectedColor">#1AEC3E3F</item>
@@ -56,6 +91,7 @@
         <item name="tabSelectedColor">#EC3E3E</item>
         <item name="tabSelectedTextColor">@color/white</item>
     </style>
+
     <style name="AppTheme.GrassGreen" parent="AppThemeBase">
         <item name="colorPrimary">#4C9C4E</item>
         <item name="colorOnPrimary">@color/white</item>
@@ -70,7 +106,6 @@
         <item name="android:colorPrimary">#4C9C4E</item>
         <item name="android:colorPrimaryDark">#3C983F</item>
         <item name="android:colorAccent">#4C9C4E</item>
-        <item name="android:textColorSecondary">#3C983F</item>
         <item name="android:buttonStyle">@style/ButtonColorGrassGreen</item>
         <item name="selectedColor">#8BC34A</item>
         <item name="unselectedColor">#3C983F</item>
@@ -80,30 +115,11 @@
         <item name="tabSelectedColor">#4C9C4E</item>
         <item name="tabSelectedTextColor">@color/white</item>
     </style>
+
     <style name="AppTheme.SkyBlue" parent="AppThemeBase">
-        <item name="colorPrimary">#1C5DCC</item>
-        <item name="colorOnPrimary">@color/white</item>
-        <item name="colorPrimaryContainer">#D8E2FF</item>
-        <item name="colorOnPrimaryContainer">#001A41</item>
-        <item name="colorSecondary">#555F71</item>
-        <item name="colorOnSecondary">@color/white</item>
-        <item name="colorSecondaryContainer">#D8E2FF</item>
-        <item name="colorOnSecondaryContainer">#001A41</item>
-        <item name="colorTertiary">#6E5676</item>
-        <item name="colorOnTertiary">@color/white</item>
-        <item name="android:colorPrimary">#1C5DCC</item>
-        <item name="android:colorPrimaryDark">#1C6FB7</item>
-        <item name="android:colorAccent">#184DA8</item>
-        <item name="android:textColorSecondary">#1C6FB7</item>
         <item name="android:buttonStyle">@style/ButtonColorSkyBlue</item>
-        <item name="selectedColor">#1C5DCC</item>
-        <item name="unselectedColor">#1C6FB7</item>
-        <item name="callButtonBackgroundColor">#71B2EB</item>
-        <item name="tabColor">#D8E2FF</item>
-        <item name="tabTextColor">#001A41</item>
-        <item name="tabSelectedColor">#1C5DCC</item>
-        <item name="tabSelectedTextColor">@color/white</item>
     </style>
+
     <style name="AppTheme.NightGrey" parent="AppThemeBase">
         <item name="colorPrimary">@color/dark_grey</item>
         <item name="colorOnPrimary">@color/white</item>
@@ -113,12 +129,9 @@
         <item name="colorOnSecondary">@color/white</item>
         <item name="colorSecondaryContainer">@color/lighter_grey</item>
         <item name="colorOnSecondaryContainer">@color/darker_grey</item>
-        <item name="colorTertiary">@color/darker_grey</item>
-        <item name="colorOnTertiary">@color/white</item>
         <item name="android:colorPrimary">@color/dark_grey</item>
         <item name="android:colorPrimaryDark">@color/darker_grey</item>
         <item name="android:colorAccent">@color/dark_grey</item>
-        <item name="android:textColorSecondary">@color/dark_grey</item>
         <item name="android:buttonStyle">@style/ButtonColorNightGrey</item>
         <item name="selectedColor">@color/light_grey</item>
         <item name="unselectedColor">@color/dark_grey</item>

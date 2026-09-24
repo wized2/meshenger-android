@@ -36,42 +36,36 @@
     </style>
 
     <style name="Widget.Meshenger.Toolbar" parent="Widget.Material3.Toolbar">
-        <item name="android:background">?attr/colorSurface</item>
-        <item name="titleTextColor">?attr/colorOnSurface</item>
-        <item name="navigationIconTint">?attr/colorOnSurface</item>
+        <item name="android:background">@color/m3_surface</item>
     </style>
-    <style name="Widget.Meshenger.BottomNav.ActiveIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
-        <item name="android:color">?attr/colorSecondaryContainer</item>
-    </style>
-    <style name="Widget.Meshenger.Card" parent="Widget.Material3.CardView.Filled">
-        <item name="cardBackgroundColor">?attr/colorSurfaceContainer</item>
+
+    <style name="Widget.Meshenger.Card" parent="Widget.Material3.CardView.Elevated">
+        <item name="cardBackgroundColor">@color/m3_surface_container</item>
         <item name="cardCornerRadius">16dp</item>
         <item name="cardElevation">0dp</item>
         <item name="strokeWidth">0dp</item>
     </style>
+
     <style name="Widget.Meshenger.Fab" parent="Widget.Material3.FloatingActionButton.Primary">
-        <item name="backgroundTint">?attr/colorPrimaryContainer</item>
-        <item name="tint">?attr/colorOnPrimaryContainer</item>
         <item name="borderWidth">0dp</item>
     </style>
-    <style name="Widget.Meshenger.Switch" parent="Widget.Material3.CompoundButton.Switch">
-        <item name="useMaterialThemeColors">true</item>
-    </style>
+
     <style name="CurvedImageViewStyle" parent="">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">12%</item>
     </style>
+
     <style name="CustomTabTextStyle" parent="TextAppearance.Material3.TitleSmall">
         <item name="android:textSize">@dimen/headline_text_size</item>
         <item name="android:fontFamily">@font/lato_bold</item>
         <item name="textAllCaps">false</item>
     </style>
-    <style name="MySpinner" parent="@android:style/Widget.Material.ListView.DropDown">
+
+    <!-- ListView dropdown — no theme attrs (inflate-safe) -->
+    <style name="MySpinner" parent="@android:style/Widget.ListView.DropDown">
         <item name="android:dividerHeight">1dp</item>
-        <item name="android:divider">?attr/colorOutlineVariant</item>
+        <item name="android:divider">@color/m3_outline_variant</item>
     </style>
-    <style name="AlertDialogTheme" parent="ThemeOverlay.Material3.MaterialAlertDialog">
-        <item name="colorPrimary">?attr/colorPrimary</item>
-        <item name="colorSurface">?attr/colorSurfaceContainerHigh</item>
-    </style>
+
+    <style name="AlertDialogTheme" parent="ThemeOverlay.Material3.MaterialAlertDialog" />
 </resources>
