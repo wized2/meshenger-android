@@ -12,6 +12,7 @@
         <item name="colorSurface">@color/m3_surface</item>
         <item name="colorOnSurface">@color/m3_on_surface</item>
         <item name="colorOnSurfaceVariant">@color/m3_on_surface_variant</item>
+        <item name="colorSurfaceVariant">@color/m3_surface_container_high</item>
         <item name="colorSurfaceContainerLowest">@color/m3_surface_container_lowest</item>
         <item name="colorSurfaceContainerLow">@color/m3_surface_container_low</item>
         <item name="colorSurfaceContainer">@color/m3_surface_container</item>
@@ -21,6 +22,8 @@
         <item name="colorOutlineVariant">@color/m3_outline_variant</item>
         <item name="android:colorBackground">@color/m3_surface</item>
         <item name="colorOnBackground">@color/m3_on_surface</item>
+        <item name="colorError">#F2B8B5</item>
+        <item name="colorOnError">#601410</item>
 
         <item name="shapeAppearanceSmallComponent">@style/Shape.Meshenger.Small</item>
         <item name="shapeAppearanceMediumComponent">@style/Shape.Meshenger.Medium</item>

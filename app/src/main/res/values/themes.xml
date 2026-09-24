@@ -12,6 +12,8 @@
         <item name="colorSurface">@color/m3_surface</item>
         <item name="colorOnSurface">@color/m3_on_surface</item>
         <item name="colorOnSurfaceVariant">@color/m3_on_surface_variant</item>
+        <item name="colorSurfaceVariant">@color/m3_surface_container_high</item>
+        <item name="colorOnSurfaceVariant">@color/m3_on_surface_variant</item>
         <item name="colorSurfaceContainerLowest">@color/m3_surface_container_lowest</item>
         <item name="colorSurfaceContainerLow">@color/m3_surface_container_low</item>
         <item name="colorSurfaceContainer">@color/m3_surface_container</item>
@@ -21,6 +23,8 @@
         <item name="colorOutlineVariant">@color/m3_outline_variant</item>
         <item name="android:colorBackground">@color/m3_surface</item>
         <item name="colorOnBackground">@color/m3_on_surface</item>
+        <item name="colorError">#B3261E</item>
+        <item name="colorOnError">@color/white</item>
 
         <item name="shapeAppearanceSmallComponent">@style/Shape.Meshenger.Small</item>
         <item name="shapeAppearanceMediumComponent">@style/Shape.Meshenger.Medium</item>
@@ -36,8 +40,11 @@
         <item name="colorOnPrimary">@color/seed_fire_on</item>
         <item name="colorPrimaryContainer">@color/seed_fire_container</item>
         <item name="colorOnPrimaryContainer">@color/seed_fire_on_container</item>
+        <item name="colorPrimaryDark">@color/seed_fire</item>
         <item name="colorSecondary">@color/seed_fire_secondary</item>
         <item name="colorOnSecondary">@color/white</item>
+        <item name="colorSecondaryContainer">@color/seed_fire_container</item>
+        <item name="colorOnSecondaryContainer">@color/seed_fire_on_container</item>
         <item name="colorTertiary">@color/seed_fire_tertiary</item>
         <item name="colorOnTertiary">@color/white</item>
         <item name="colorAccent">@color/seed_fire</item>
@@ -60,8 +67,11 @@
         <item name="colorOnPrimary">@color/seed_grass_on</item>
         <item name="colorPrimaryContainer">@color/seed_grass_container</item>
         <item name="colorOnPrimaryContainer">@color/seed_grass_on_container</item>
+        <item name="colorPrimaryDark">@color/seed_grass</item>
         <item name="colorSecondary">@color/seed_grass_secondary</item>
         <item name="colorOnSecondary">@color/white</item>
+        <item name="colorSecondaryContainer">@color/seed_grass_container</item>
+        <item name="colorOnSecondaryContainer">@color/seed_grass_on_container</item>
         <item name="colorTertiary">@color/seed_grass_tertiary</item>
         <item name="colorOnTertiary">@color/white</item>
         <item name="colorAccent">@color/seed_grass</item>
@@ -84,8 +94,11 @@
         <item name="colorOnPrimary">@color/seed_sky_on</item>
         <item name="colorPrimaryContainer">@color/seed_sky_container</item>
         <item name="colorOnPrimaryContainer">@color/seed_sky_on_container</item>
+        <item name="colorPrimaryDark">@color/seed_sky</item>
         <item name="colorSecondary">@color/seed_sky_secondary</item>
         <item name="colorOnSecondary">@color/white</item>
+        <item name="colorSecondaryContainer">@color/seed_sky_container</item>
+        <item name="colorOnSecondaryContainer">@color/seed_sky_on_container</item>
         <item name="colorTertiary">@color/seed_sky_tertiary</item>
         <item name="colorOnTertiary">@color/white</item>
         <item name="colorAccent">@color/seed_sky</item>
@@ -108,8 +121,11 @@
         <item name="colorOnPrimary">@color/seed_grey_on</item>
         <item name="colorPrimaryContainer">@color/seed_grey_container</item>
         <item name="colorOnPrimaryContainer">@color/seed_grey_on_container</item>
+        <item name="colorPrimaryDark">@color/darker_grey</item>
         <item name="colorSecondary">@color/seed_grey_secondary</item>
         <item name="colorOnSecondary">@color/white</item>
+        <item name="colorSecondaryContainer">@color/seed_grey_container</item>
+        <item name="colorOnSecondaryContainer">@color/seed_grey_on_container</item>
         <item name="colorTertiary">@color/seed_grey_tertiary</item>
         <item name="colorOnTertiary">@color/white</item>
         <item name="colorAccent">@color/seed_grey</item>
@@ -130,6 +146,5 @@
     <style name="AlertDialogTheme" parent="ThemeOverlay.Material3.MaterialAlertDialog">
         <item name="colorPrimary">?attr/colorPrimary</item>
         <item name="colorSurface">?attr/colorSurfaceContainerHigh</item>
-        <item name="shapeAppearanceOverlay">@style/Shape.Meshenger.Medium</item>
     </style>
 </resources>

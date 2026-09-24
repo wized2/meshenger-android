@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Expressive M3 shape scale -->
     <style name="Shape.Meshenger.Small" parent="ShapeAppearance.Material3.SmallComponent">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">12dp</item>
@@ -50,7 +49,8 @@
         <item name="android:fontFamily">@font/lato_bold</item>
     </style>
 
-    <style name="MySpinner" parent="Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+    <!-- Used as android:dropDownListViewStyle — must be a ListView style, not TextInputLayout -->
+    <style name="MySpinner" parent="@android:style/Widget.Material.ListView.DropDown">
         <item name="android:dividerHeight">1dp</item>
         <item name="android:divider">@color/m3_outline_variant</item>
     </style>
