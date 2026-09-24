@@ -1,0 +1,48 @@
+name: ReleaseFix
+
+on:
+  push:
+    branches: [feature/material-you-3-expressive]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+      - run: chmod +x gradlew
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          validate-wrappers: false
+      - name: Build signed release
+        run: ./gradlew assembleFdroidRelease --stacktrace
+      - name: Pack source
+        run: |
+          git archive --format=tar.gz --prefix=meshenger-android-source/ -o meshenger-android-source.tar.gz HEAD
+          zip -qr meshenger-android-source.zip . -x '.git/*' -x 'app/build/*' -x '.gradle/*' -x '**/build/*'
+      - name: Publish
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v4.4.9-m3-expressive-fix1
+          name: Meshenger 4.4.9 M3 (R8 fix)
+          body: |
+            Fix launch crash from overly aggressive R8.
+
+            - Non-optimize ProGuard base
+            - Full keep for app, WebRTC, libsodium, Material
+            - Safe resource shrink mode
+            - Signed fdroid release APK + source
+          files: |
+            app/build/outputs/apk/fdroid/release/app-fdroid-release.apk
+            meshenger-android-source.tar.gz
+            meshenger-android-source.zip
+          draft: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
