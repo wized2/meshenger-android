@@ -13,12 +13,22 @@ android {
         resourceConfigurations += ['ar', 'ca', 'de', 'en', 'es', 'fa', 'fr', 'he', 'in', 'iw', 'ja', 'nb-rNO', 'oc', 'pl', 'pt', 'pt-rBR', 'ru', 'ta', 'tr', 'uk', 'zh', 'zh-rTW']
     }
 
+
+    signingConfigs {
+        release {
+            storeFile file('keystore/meshenger-release.jks')
+            storePassword 'meshenger-release'
+            keyAlias 'meshenger'
+            keyPassword 'meshenger-release'
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.debug
+            signingConfig signingConfigs.release
         }
         debug {
             minifyEnabled false
