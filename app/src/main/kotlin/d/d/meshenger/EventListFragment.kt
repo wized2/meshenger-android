@@ -15,6 +15,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import androidx.fragment.app.Fragment
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -201,7 +202,7 @@ class EventListFragment : Fragment() {
     private fun showClearEventsDialog() {
         Log.d(this, "showClearEventsDialog()")
 
-        val builder = AlertDialog.Builder(requireContext(), R.style.AlertDialogTheme)
+        val builder = MaterialAlertDialogBuilder(requireContext(), R.style.AlertDialogTheme)
         builder.setTitle(R.string.clear_events)
         builder.setMessage(R.string.remove_all_events)
         builder.setCancelable(false) // prevent key shortcut to cancel dialog

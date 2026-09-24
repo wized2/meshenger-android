@@ -33,9 +33,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
-import com.google.android.material.tabs.TabLayout
-import com.google.android.material.tabs.TabLayout.OnTabSelectedListener
-import com.google.android.material.tabs.TabLayoutMediator
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import d.d.meshenger.MainService.MainBinder
 import java.util.Locale
 import androidx.core.graphics.drawable.toDrawable
@@ -126,13 +124,6 @@ class MainActivity : BaseActivity(), ServiceConnection {
         }, 700)
     }
 
-    private fun getColorDrawable(attr: Int): Drawable {
-        val typedValue = TypedValue()
-        val theme = this@MainActivity.getTheme()
-        theme.resolveAttribute(attr, typedValue, true)
-        return typedValue.data.toDrawable()
-    }
-
     override fun onServiceConnected(componentName: ComponentName, iBinder: IBinder) {
         Log.d(this, "onServiceConnected()")
         this.binder = iBinder as MainBinder
@@ -151,76 +142,40 @@ class MainActivity : BaseActivity(), ServiceConnection {
             it.notifyDataSetChanged()
         }
 
-        val tabLayout = findViewById<TabLayout>(R.id.TabLayout)
+        val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_nav)
         if (settings.disableCallHistory) {
-            tabLayout.visibility = View.GONE
+            bottomNav.visibility = View.GONE
+            bottomNav.menu.findItem(R.id.nav_calls)?.isVisible = false
         } else {
-            // default
-            tabLayout.visibility = View.VISIBLE
+            bottomNav.visibility = View.VISIBLE
+            bottomNav.menu.findItem(R.id.nav_calls)?.isVisible = true
         }
-
-        // workaround since TabLayout with app:tabBackground and xml with
-        // selected/unselected themeable tab colors create an exception.
-        tabLayout.addOnTabSelectedListener(object : OnTabSelectedListener {
-            init {
-                resetBackgroundColor()
+        bottomNav.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.nav_contacts -> viewPager.currentItem = 0
+                R.id.nav_calls -> viewPager.currentItem = 1
             }
-
-            private fun resetBackgroundColor() {
-                Log.d(this, "resetBackgroundColor ${tabLayout.size}")
-                for (i in 0..tabLayout.size) {
-                    val tab = tabLayout.getTabAt(i)
-                    if (tab != null) {
-                        tab.view.background = getColorDrawable(R.attr.tabColor)
-                    }
-                }
-            }
-
-            override fun onTabSelected(tab: TabLayout.Tab) {
-                resetBackgroundColor()
-                tab.view.background = getColorDrawable(R.attr.tabSelectedColor)
-            }
-
-            override fun onTabUnselected(tab: TabLayout.Tab) {
-                tab.view.background = getColorDrawable(R.attr.tabColor)
-            }
-
-            override fun onTabReselected(tab: TabLayout.Tab?) {
-                // nothing to do
+            true
+        }
+        viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+            override fun onPageSelected(position: Int) {
+                val id = if (position == 0) R.id.nav_contacts else R.id.nav_calls
+                if (bottomNav.selectedItemId != id) bottomNav.selectedItemId = id
             }
         })
+        updateCallsBadge()
 
         val toolbarLabel = findViewById<TextView>(R.id.toolbar_label)
         if (settings.showUsernameAsLogo) {
             toolbarLabel.visibility = View.VISIBLE
             toolbarLabel.text = settings.username
         } else {
-            // default
             toolbarLabel.visibility = View.GONE
-        }
-
-        TabLayoutMediator(tabLayout, viewPager) { tab, position ->
-            tab.text = when (position) {
-                0 -> getString(R.string.title_contacts)
-                else -> {
-                    val eventsMissed = Database.getEvents().eventsMissed
-                    if (eventsMissed == 0) {
-                        getString(R.string.title_calls)
-                    } else {
-                        String.format(Locale.getDefault(), "%s (%d)", getString(R.string.title_calls), eventsMissed)
-                    }
-                }
-            }
-        }.attach()
-
-        if (!addressWarningShown) {
-            // only show once since app start
-            showInvalidAddressSettingsWarning()
-            addressWarningShown = true
         }
 
         MainService.refreshEvents(applicationContext)
         MainService.refreshContacts(applicationContext)
+        showInvalidAddressSettingsWarning()
     }
 
     override fun onServiceDisconnected(componentName: ComponentName) {
@@ -291,8 +246,23 @@ class MainActivity : BaseActivity(), ServiceConnection {
 
     fun updateEventTabTitle() {
         Log.d(this, "updateEventTabTitle()")
-        // update event tab title
         (viewPager.adapter as ViewPagerFragmentAdapter?)?.notifyDataSetChanged()
+        updateCallsBadge()
+    }
+
+    private fun updateCallsBadge() {
+        val bottomNav = findViewById<BottomNavigationView?>(R.id.bottom_nav) ?: return
+        val missed = try { Database.getEvents().eventsMissed } catch (_: Exception) { 0 }
+        if (missed > 0 && bottomNav.visibility == View.VISIBLE) {
+            val badge = bottomNav.getOrCreateBadge(R.id.nav_calls)
+            badge.isVisible = true
+            badge.number = missed
+            val tv = TypedValue()
+            theme.resolveAttribute(com.google.android.material.R.attr.colorPrimary, tv, true)
+            badge.backgroundColor = tv.data
+        } else {
+            bottomNav.removeBadge(R.id.nav_calls)
+        }
     }
 
     override fun onResume() {

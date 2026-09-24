@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="?attr/colorSurface"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
@@ -8,7 +9,10 @@
     <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="0dp"
+        android:clipToPadding="false"
+        android:paddingBottom="88dp"
         android:id="@+id/contactList"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -19,8 +23,9 @@
         android:layout_margin="@dimen/fab_margin"
         android:contentDescription="Ping All Contacts"
         app:srcCompat="@drawable/ping"
-        app:backgroundTint="?android:colorPrimary"
-        app:backgroundTintMode="add"
+        app:backgroundTint="?attr/colorPrimaryContainer"
+        app:tint="?attr/colorOnPrimaryContainer"
+        
         android:visibility="gone" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -31,8 +36,9 @@
         android:layout_margin="@dimen/fab_margin"
         android:contentDescription="Scan QR Code"
         app:srcCompat="@drawable/qr_glass"
-        app:backgroundTint="?android:colorPrimary"
-        app:backgroundTintMode="add"
+        app:backgroundTint="?attr/colorPrimaryContainer"
+        app:tint="?attr/colorOnPrimaryContainer"
+        
         android:visibility="gone" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -43,8 +49,9 @@
         android:layout_margin="@dimen/fab_margin"
         android:contentDescription="Show QR Code"
         app:srcCompat="@drawable/qr_code"
-        app:backgroundTint="?android:colorPrimary"
-        app:backgroundTintMode="add"
+        app:backgroundTint="?attr/colorPrimaryContainer"
+        app:tint="?attr/colorOnPrimaryContainer"
+        
         android:visibility="gone" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -53,8 +60,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
-        app:backgroundTint="?android:colorPrimary"
-        app:backgroundTintMode="add"
+        app:backgroundTint="?attr/colorPrimaryContainer"
+        app:tint="?attr/colorOnPrimaryContainer"
+        
         android:contentDescription="Contact Actions"
         app:srcCompat="@drawable/qr_glass" />
 

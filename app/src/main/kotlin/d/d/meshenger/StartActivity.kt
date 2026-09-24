@@ -23,6 +23,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import org.libsodium.jni.NaCl
 import org.libsodium.jni.Sodium
 import java.util.UUID
@@ -193,7 +194,7 @@ class StartActivity : BaseActivity() {
     private fun showMissingAddressDialog() {
         val defaultAddress = getDefaultAddress()
         if (defaultAddress == null) {
-            val builder = AlertDialog.Builder(this, R.style.AlertDialogTheme)
+            val builder = MaterialAlertDialogBuilder(this, R.style.AlertDialogTheme)
             builder.setTitle(getString(R.string.setup_address))
             builder.setMessage(getString(R.string.setup_no_address_found))
             builder.setPositiveButton(R.string.button_ok) { dialog: DialogInterface, _: Int ->
@@ -239,7 +240,7 @@ class StartActivity : BaseActivity() {
         layout.addView(et)
         layout.setPadding(40, 80, 40, 40)
 
-        val builder = AlertDialog.Builder(this, R.style.AlertDialogTheme)
+        val builder = MaterialAlertDialogBuilder(this, R.style.AlertDialogTheme)
         builder.setTitle(R.string.startup_hello)
         builder.setView(layout)
         builder.setNegativeButton(R.string.button_skip) { dialog: DialogInterface?, _: Int ->

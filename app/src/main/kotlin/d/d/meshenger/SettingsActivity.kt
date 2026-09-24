@@ -582,23 +582,27 @@ class SettingsActivity : BaseActivity(), ServiceConnection {
     }
 
     private fun applySettingsMode(settingsMode: String) {
-        val basicSettingsLayout = findViewById<View>(R.id.basicSettingsLayout)
+        val advancedCard = findViewById<View>(R.id.advancedSettingsCard)
+        val expertCard = findViewById<View>(R.id.expertSettingsCard)
         val advancedSettingsLayout = findViewById<View>(R.id.advancedSettingsLayout)
         val expertSettingsLayout = findViewById<View>(R.id.expertSettingsLayout)
 
         when (settingsMode) {
             "basic" -> {
-                basicSettingsLayout.visibility = View.VISIBLE
-                advancedSettingsLayout.visibility = View.INVISIBLE
-                expertSettingsLayout.visibility = View.INVISIBLE
+                advancedCard.visibility = View.GONE
+                expertCard.visibility = View.GONE
+                advancedSettingsLayout.visibility = View.GONE
+                expertSettingsLayout.visibility = View.GONE
             }
             "advanced" -> {
-                basicSettingsLayout.visibility = View.VISIBLE
+                advancedCard.visibility = View.VISIBLE
+                expertCard.visibility = View.GONE
                 advancedSettingsLayout.visibility = View.VISIBLE
-                expertSettingsLayout.visibility = View.INVISIBLE
+                expertSettingsLayout.visibility = View.GONE
             }
             "expert" -> {
-                basicSettingsLayout.visibility = View.VISIBLE
+                advancedCard.visibility = View.VISIBLE
+                expertCard.visibility = View.VISIBLE
                 advancedSettingsLayout.visibility = View.VISIBLE
                 expertSettingsLayout.visibility = View.VISIBLE
             }

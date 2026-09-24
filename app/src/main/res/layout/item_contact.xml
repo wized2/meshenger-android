@@ -1,26 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Widget.Meshenger.Card"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-
-    <TextView
-        android:id="@+id/contact_name"
-        android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="12dp"
+    android:layout_marginVertical="6dp"
+    app:cardCornerRadius="16dp"
+    app:cardBackgroundColor="?attr/colorSurfaceContainer">
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginVertical="10dp"
-        android:layout_alignParentStart="true"
-        android:textSize="26sp"
-        android:fontFamily="@font/poppins_regular"
-        android:textColor="?android:textColorPrimary" />
-
-    <ImageView
-        android:id="@+id/contact_state"
-        android:contentDescription="@string/contact_state"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_alignParentEnd="true"
-        android:layout_centerVertical="true"
-        android:layout_margin="8dp" />
-
-</RelativeLayout>
+        android:minHeight="64dp"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="12dp">
+        <TextView
+            android:id="@+id/contact_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@id/contact_state"
+            android:fontFamily="@font/poppins_regular"
+            android:textColor="?attr/colorOnSurface"
+            android:textSize="20sp" />
+        <ImageView
+            android:id="@+id/contact_state"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:contentDescription="@string/contact_state" />
+    </RelativeLayout>
+</com.google.android.material.card.MaterialCardView>

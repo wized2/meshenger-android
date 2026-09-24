@@ -21,6 +21,7 @@ import android.os.IBinder
 import android.widget.Button
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import androidx.appcompat.widget.Toolbar
 import java.lang.Exception
 
@@ -32,7 +33,7 @@ class BackupActivity : BaseActivity(), ServiceConnection {
     private lateinit var passwordEditText: TextView
 
     private fun showMessage(title: String, message: String) {
-        val builder = AlertDialog.Builder(this, R.style.AlertDialogTheme)
+        val builder = MaterialAlertDialogBuilder(this, R.style.AlertDialogTheme)
         builder.setTitle(title)
         builder.setMessage(message)
         builder.setPositiveButton(android.R.string.ok, null)
@@ -150,7 +151,7 @@ class BackupActivity : BaseActivity(), ServiceConnection {
 
         val contactCount = newDatabase.contacts.contactList.size
         val eventCount = newDatabase.events.eventList.size
-        val builder = AlertDialog.Builder(this, R.style.AlertDialogTheme)
+        val builder = MaterialAlertDialogBuilder(this, R.style.AlertDialogTheme)
         builder.setTitle(R.string.dialog_title_import_backup)
         builder.setMessage(String.format(getString(R.string.import_dialog), contactCount, eventCount))
         builder.setCancelable(false) // prevent key shortcut to cancel dialog

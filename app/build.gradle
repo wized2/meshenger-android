@@ -5,19 +5,31 @@ android {
         minSdkVersion 21
         targetSdkVersion 35
         compileSdk 34
-        versionCode 449
-        versionName "4.4.9"
+        versionCode 460
+        versionName "4.5.0-m3"
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
         vectorDrawables.useSupportLibrary = true
         multiDexEnabled true
         resourceConfigurations += ['ar', 'ca', 'de', 'en', 'es', 'fa', 'fr', 'he', 'in', 'iw', 'ja', 'nb-rNO', 'oc', 'pl', 'pt', 'pt-rBR', 'ru', 'ta', 'tr', 'uk', 'zh', 'zh-rTW']
     }
 
+    signingConfigs {
+        release {
+            storeFile file('keystore/meshenger-release.jks')
+            storePassword 'meshenger-release'
+            keyAlias 'meshenger'
+            keyPassword 'meshenger-release'
+            enableV1Signing true
+            enableV2Signing true
+            enableV3Signing true
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.debug
+            signingConfig signingConfigs.release
         }
     }
 

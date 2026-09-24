@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppThemeBase" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:dropDownListViewStyle">@style/MySpinner</item>
+        <item name="android:fitsSystemWindows">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="colorSurface">@color/m3_surface</item>
+        <item name="colorOnSurface">@color/m3_on_surface</item>
+        <item name="colorOnSurfaceVariant">@color/m3_on_surface_variant</item>
+        <item name="colorSurfaceContainer">@color/m3_surface_container</item>
+        <item name="colorSurfaceContainerHigh">@color/m3_surface_container_high</item>
+        <item name="colorSurfaceContainerHighest">@color/m3_surface_container_high</item>
+        <item name="colorOutline">@color/m3_outline</item>
+        <item name="colorOutlineVariant">@color/m3_outline_variant</item>
+        <item name="android:colorBackground">@color/m3_surface</item>
+        <item name="colorOnBackground">@color/m3_on_surface</item>
+        <item name="shapeAppearanceSmallComponent">@style/Shape.Meshenger.Small</item>
+        <item name="shapeAppearanceMediumComponent">@style/Shape.Meshenger.Medium</item>
+        <item name="shapeAppearanceLargeComponent">@style/Shape.Meshenger.Large</item>
+        <item name="toolbarStyle">@style/Widget.Meshenger.Toolbar</item>
+        <item name="floatingActionButtonStyle">@style/Widget.Meshenger.Fab</item>
+        <item name="materialCardViewStyle">@style/Widget.Meshenger.Card</item>
+        <item name="switchStyle">@style/Widget.Meshenger.Switch</item>
+        <item name="alertDialogTheme">@style/AlertDialogTheme</item>
+        <item name="materialAlertDialogTheme">@style/AlertDialogTheme</item>
+        <item name="popupMenuBackground">@drawable/m3_popup_background</item>
+        <item name="colorControlActivated">?attr/colorPrimary</item>
+        <item name="android:textColorPrimary">?attr/colorOnSurface</item>
+        <item name="android:textColorSecondary">?attr/colorOnSurfaceVariant</item>
+    </style>
+</resources>

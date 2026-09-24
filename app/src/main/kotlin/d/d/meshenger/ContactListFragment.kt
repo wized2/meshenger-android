@@ -20,9 +20,11 @@ import android.view.animation.AnimationSet
 import android.view.animation.TranslateAnimation
 import android.widget.AdapterView
 import android.widget.ListView
-import android.widget.PopupMenu
+import android.view.ContextThemeWrapper
+import androidx.appcompat.widget.PopupMenu
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import androidx.fragment.app.Fragment
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -56,7 +58,7 @@ class ContactListFragment() : Fragment() {
     private val onContactLongClickListener =
         AdapterView.OnItemLongClickListener { adapterView, view, i, _ ->
             val contact = adapterView.adapter.getItem(i) as Contact
-            val menu = PopupMenu(activity, view)
+            val menu = PopupMenu(ContextThemeWrapper(activity, R.style.AlertDialogTheme), view)
             // menu items
             val titles = intArrayOf(
                 R.string.contact_menu_details, R.string.contact_menu_delete,
@@ -268,7 +270,7 @@ class ContactListFragment() : Fragment() {
     }
 
     private fun showDeleteDialog(publicKey: ByteArray, name: String) {
-        val builder = AlertDialog.Builder(requireContext(), R.style.AlertDialogTheme)
+        val builder = MaterialAlertDialogBuilder(requireContext(), R.style.AlertDialogTheme)
         builder.setTitle(R.string.dialog_title_delete_contact)
         builder.setMessage(name)
         builder.setCancelable(false) // prevent key shortcut to cancel dialog

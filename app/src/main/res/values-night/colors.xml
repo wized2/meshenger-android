@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="m3_surface">#1C1B1F</color>
+    <color name="m3_on_surface">#E6E1E5</color>
+    <color name="m3_on_surface_variant">#CAC4D0</color>
+    <color name="m3_surface_container">#211F26</color>
+    <color name="m3_surface_container_high">#2B2930</color>
+    <color name="m3_outline">#938F99</color>
+    <color name="m3_outline_variant">#49454F</color>
+</resources>

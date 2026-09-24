@@ -25,6 +25,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.BinaryBitmap
 import com.google.zxing.MultiFormatReader
@@ -179,7 +180,7 @@ class QRScanActivity : BaseActivity(), BarcodeCallback, ServiceConnection {
 
     private fun startManualInput() {
         barcodeView.pause()
-        val b = AlertDialog.Builder(this, R.style.AlertDialogTheme)
+        val b = MaterialAlertDialogBuilder(this, R.style.AlertDialogTheme)
         val et = EditText(this)
         b.setTitle(R.string.paste_qr_code_data)
             .setPositiveButton(R.string.button_ok) { _: DialogInterface?, _: Int ->

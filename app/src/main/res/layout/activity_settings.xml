@@ -4,17 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?attr/colorSurface"
     tools:context=".SettingsActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="?android:windowBackground"
+        android:background="?attr/colorSurface"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.appcompat.widget.Toolbar
+        <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
@@ -26,10 +27,10 @@
                 android:layout_gravity="center"
                 android:fontFamily="@font/lato_bold"
                 android:text="@string/title_settings"
-                android:textColor="?android:textColorPrimary"
+                android:textColor="?attr/colorOnSurface"
                 android:textSize="@dimen/headline_text_size" />
 
-        </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.MaterialToolbar>
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -47,13 +48,22 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <LinearLayout
-                android:id="@+id/basicSettingsLayout"
+                            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/basicSettingsCard"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="@dimen/padding_20"
-                android:layout_marginRight="@dimen/padding_20"
-                android:orientation="vertical">
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginBottom="12dp"
+                app:cardBackgroundColor="?attr/colorSurfaceContainer"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp">
+                <LinearLayout
+                    android:id="@+id/basicSettingsLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingVertical="8dp">
 
                 <LinearLayout
                     android:id="@+id/nameLayout"
@@ -67,7 +77,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/lato_bold"
                         android:text="@string/settings_name"
-                        android:textColor="?android:textColorPrimary"
+                        android:textColor="?attr/colorOnSurface"
                         android:textSize="@dimen/title_text_size" />
 
                     <TextView
@@ -78,21 +88,16 @@
                         android:paddingEnd="10dp"
                         android:paddingStart="10dp"
                         android:fontFamily="@font/lato_regular"
-                        android:textColor="?android:textColorSecondary"
+                        android:textColor="?attr/colorPrimary"
                         android:textSize="@dimen/options_text_size" />
 
                 </LinearLayout>
-
-                <com.google.android.material.divider.MaterialDivider
+<RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="15dp"
-                    app:dividerColor="@color/light_grey" />
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:minHeight="56dp"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="4dp"
                     >
 
                     <TextView
@@ -102,7 +107,7 @@
                         android:layout_centerInParent="true"
                         android:fontFamily="@font/lato_bold"
                         android:text="@string/settings_nightmode"
-                        android:textColor="?android:textColorPrimary"
+                        android:textColor="?attr/colorOnSurface"
                         android:textSize="@dimen/title_text_size" />
 
                     <Spinner
@@ -114,17 +119,12 @@
                         android:textSize="@dimen/options_text_size" />
 
                 </RelativeLayout>
-
-                <com.google.android.material.divider.MaterialDivider
+<RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="15dp"
-                    app:dividerColor="@color/light_grey" />
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:minHeight="56dp"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="4dp"
                     >
 
                     <TextView
@@ -134,7 +134,7 @@
                         android:layout_centerInParent="true"
                         android:fontFamily="@font/lato_bold"
                         android:text="@string/settings_theme_name"
-                        android:textColor="?android:textColorPrimary"
+                        android:textColor="?attr/colorOnSurface"
                         android:textSize="@dimen/title_text_size" />
 
                     <Spinner
@@ -146,17 +146,12 @@
                         android:textSize="@dimen/options_text_size" />
 
                 </RelativeLayout>
-
-                <com.google.android.material.divider.MaterialDivider
+<RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="15dp"
-                    app:dividerColor="@color/light_grey" />
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:minHeight="56dp"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="4dp"
                     >
 
                     <TextView
@@ -166,7 +161,7 @@
                         android:layout_centerInParent="true"
                         android:fontFamily="@font/lato_bold"
                         android:text="@string/settings_block_unknown"
-                        android:textColor="?android:textColorPrimary"
+                        android:textColor="?attr/colorOnSurface"
                         android:textSize="@dimen/title_text_size" />
 
                     <com.google.android.material.switchmaterial.SwitchMaterial
@@ -179,16 +174,7 @@
                         app:thumbTint="?android:textColorSecondary" />
 
                 </RelativeLayout>
-
-                <com.google.android.material.divider.MaterialDivider
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="15dp"
-                    android:visibility="visible"
-                    app:dividerColor="@color/light_grey" />
-
-                <LinearLayout
+<LinearLayout
                     android:id="@+id/addressLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -200,7 +186,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/lato_bold"
                         android:text="@string/settings_addresses"
-                        android:textColor="?android:textColorPrimary"
+                        android:textColor="?attr/colorOnSurface"
                         android:textSize="@dimen/title_text_size" />
 
                     <TextView
@@ -211,22 +197,16 @@
                         android:paddingEnd="10dp"
                         android:paddingStart="10dp"
                         android:fontFamily="@font/lato_regular"
-                        android:textColor="?android:textColorSecondary"
+                        android:textColor="?attr/colorPrimary"
                         android:textSize="@dimen/options_text_size" />
 
                 </LinearLayout>
-
-                <com.google.android.material.divider.MaterialDivider
+<RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="15dp"
-                    android:visibility="visible"
-                    app:dividerColor="@color/light_grey" />
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:minHeight="56dp"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="4dp"
                     >
 
                     <TextView
@@ -236,7 +216,7 @@
                         android:layout_centerInParent="true"
                         android:fontFamily="@font/lato_bold"
                         android:text="@string/settings_start_on_bootup"
-                        android:textColor="?android:textColorPrimary"
+                        android:textColor="?attr/colorOnSurface"
                         android:textSize="@dimen/title_text_size" />
 
                     <com.google.android.material.switchmaterial.SwitchMaterial
@@ -249,18 +229,12 @@
                         app:thumbTint="?android:textColorSecondary" />
 
                 </RelativeLayout>
-
-                <com.google.android.material.divider.MaterialDivider
+<RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="15dp"
-                    android:visibility="visible"
-                    app:dividerColor="@color/light_grey" />
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:minHeight="56dp"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="4dp"
                     >
 
                     <TextView
@@ -270,7 +244,7 @@
                         android:layout_centerInParent="true"
                         android:fontFamily="@font/lato_bold"
                         android:text="@string/settings_settings_mode"
-                        android:textColor="?android:textColorPrimary"
+                        android:textColor="?attr/colorOnSurface"
                         android:textSize="@dimen/title_text_size" />
 
                     <Spinner
@@ -285,26 +259,31 @@
                 </RelativeLayout>
 
             </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
 
-            <LinearLayout
-                android:id="@+id/advancedSettingsLayout"
+                            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/advancedSettingsCard"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="@dimen/padding_20"
-                android:layout_marginRight="@dimen/padding_20"
-                android:orientation="vertical"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginBottom="12dp"
+                app:cardBackgroundColor="?attr/colorSurfaceContainer"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp"
                 android:visibility="gone">
-
-                <com.google.android.material.divider.MaterialDivider
+                <LinearLayout
+                    android:id="@+id/advancedSettingsLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="15dp"
-                    app:dividerColor="@color/light_grey" />
-
-                <RelativeLayout
+                    android:orientation="vertical"
+                    android:paddingVertical="8dp">
+<RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:minHeight="56dp"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="4dp"
                     >
 
                     <TextView
@@ -314,7 +293,7 @@
                         android:layout_centerInParent="true"
                         android:fontFamily="@font/lato_bold"
                         android:text="@string/settings_automatic_status_updates"
-                        android:textColor="?android:textColorPrimary"
+                        android:textColor="?attr/colorOnSurface"
                         android:textSize="@dimen/title_text_size" />
 
                     <com.google.android.material.switchmaterial.SwitchMaterial
@@ -327,17 +306,12 @@
                         app:thumbTint="?android:textColorSecondary" />
 
                 </RelativeLayout>
-
-                <com.google.android.material.divider.MaterialDivider
+<RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="15dp"
-                    app:dividerColor="@color/light_grey" />
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:minHeight="56dp"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="4dp"
                     >
 
                     <TextView
@@ -347,7 +321,7 @@
                         android:layout_centerInParent="true"
                         android:fontFamily="@font/lato_bold"
                         android:text="@string/settings_enable_microphone_by_default"
-                        android:textColor="?android:textColorPrimary"
+                        android:textColor="?attr/colorOnSurface"
                         android:textSize="@dimen/title_text_size" />
 
                     <com.google.android.material.switchmaterial.SwitchMaterial
@@ -360,17 +334,12 @@
                         app:thumbTint="?android:textColorSecondary" />
 
                 </RelativeLayout>
-
-                <com.google.android.material.divider.MaterialDivider
+<RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="15dp"
-                    app:dividerColor="@color/light_grey" />
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:minHeight="56dp"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="4dp"
                     >
 
                     <TextView
@@ -380,7 +349,7 @@
                         android:layout_centerInParent="true"
                         android:fontFamily="@font/lato_bold"
                         android:text="@string/settings_enable_camera_by_default"
-                        android:textColor="?android:textColorPrimary"
+                        android:textColor="?attr/colorOnSurface"
                         android:textSize="@dimen/title_text_size" />
 
                     <com.google.android.material.switchmaterial.SwitchMaterial
@@ -393,17 +362,12 @@
                         app:thumbTint="?android:textColorSecondary" />
 
                 </RelativeLayout>
-
-                <com.google.android.material.divider.MaterialDivider
+<RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="15dp"
-                    app:dividerColor="@color/light_grey" />
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:minHeight="56dp"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="4dp"
                     >
 
                     <TextView
@@ -413,7 +377,7 @@
                         android:layout_centerInParent="true"
                         android:fontFamily="@font/lato_bold"
                         android:text="@string/settings_select_front_camera_by_default"
-                        android:textColor="?android:textColorPrimary"
+                        android:textColor="?attr/colorOnSurface"
                         android:textSize="@dimen/title_text_size" />
 
                     <com.google.android.material.switchmaterial.SwitchMaterial
@@ -426,17 +390,12 @@
                         app:thumbTint="?android:textColorSecondary" />
 
                 </RelativeLayout>
-
-                <com.google.android.material.divider.MaterialDivider
+<RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="15dp"
-                    app:dividerColor="@color/light_grey" />
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:minHeight="56dp"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="4dp"
                     >
 
                     <TextView
@@ -447,7 +406,7 @@
                         android:layout_centerInParent="true"
                         android:fontFamily="@font/lato_bold"
                         android:text="@string/settings_video_degradation_mode"
-                        android:textColor="?android:textColorPrimary"
+                        android:textColor="?attr/colorOnSurface"
                         android:textSize="@dimen/title_text_size" />
 
                     <Spinner
@@ -460,17 +419,12 @@
                         android:textSize="@dimen/options_text_size" />
 
                 </RelativeLayout>
-
-                <com.google.android.material.divider.MaterialDivider
+<RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="15dp"
-                    app:dividerColor="@color/light_grey" />
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:minHeight="56dp"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="4dp"
                     >
 
                     <TextView
@@ -481,7 +435,7 @@
                         android:layout_centerInParent="true"
                         android:fontFamily="@font/lato_bold"
                         android:text="@string/settings_camera_resolution"
-                        android:textColor="?android:textColorPrimary"
+                        android:textColor="?attr/colorOnSurface"
                         android:textSize="@dimen/title_text_size" />
 
                     <Spinner
@@ -493,17 +447,12 @@
                         android:textSize="@dimen/options_text_size" />
 
                 </RelativeLayout>
-
-                <com.google.android.material.divider.MaterialDivider
+<RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="15dp"
-                    app:dividerColor="@color/light_grey" />
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:minHeight="56dp"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="4dp"
                     >
 
                     <TextView
@@ -514,7 +463,7 @@
                         android:layout_centerInParent="true"
                         android:fontFamily="@font/lato_bold"
                         android:text="@string/settings_camera_framerate"
-                        android:textColor="?android:textColorPrimary"
+                        android:textColor="?attr/colorOnSurface"
                         android:textSize="@dimen/title_text_size" />
 
                     <Spinner
@@ -526,16 +475,7 @@
                         android:textSize="@dimen/options_text_size" />
 
                 </RelativeLayout>
-
-                <com.google.android.material.divider.MaterialDivider
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:visibility="gone"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="15dp"
-                    app:dividerColor="@color/light_grey" />
-
-                <RelativeLayout
+<RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:visibility="gone"
@@ -549,7 +489,7 @@
                         android:layout_centerInParent="true"
                         android:fontFamily="@font/lato_bold"
                         android:text="@string/settings_audio_bitrate_max"
-                        android:textColor="?android:textColorPrimary"
+                        android:textColor="?attr/colorOnSurface"
                         android:textSize="@dimen/title_text_size" />
 
                     <Spinner
@@ -561,16 +501,7 @@
                         android:textSize="@dimen/options_text_size" />
 
                 </RelativeLayout>
-
-                <com.google.android.material.divider.MaterialDivider
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:visibility="gone"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="15dp"
-                    app:dividerColor="@color/light_grey" />
-
-                <RelativeLayout
+<RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:visibility="gone"
@@ -584,7 +515,7 @@
                         android:layout_centerInParent="true"
                         android:fontFamily="@font/lato_bold"
                         android:text="@string/settings_video_bitrate_max"
-                        android:textColor="?android:textColorPrimary"
+                        android:textColor="?attr/colorOnSurface"
                         android:textSize="@dimen/title_text_size" />
 
                     <Spinner
@@ -596,17 +527,12 @@
                         android:textSize="@dimen/options_text_size" />
 
                 </RelativeLayout>
-
-                <com.google.android.material.divider.MaterialDivider
+<RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="15dp"
-                    app:dividerColor="@color/light_grey" />
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:minHeight="56dp"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="4dp"
                     >
 
                     <TextView
@@ -616,7 +542,7 @@
                         android:layout_centerInParent="true"
                         android:fontFamily="@font/lato_bold"
                         android:text="@string/settings_prompt_outgoing_calls"
-                        android:textColor="?android:textColorPrimary"
+                        android:textColor="?attr/colorOnSurface"
                         android:textSize="@dimen/title_text_size" />
 
                     <com.google.android.material.switchmaterial.SwitchMaterial
@@ -629,17 +555,12 @@
                         app:thumbTint="?android:textColorSecondary" />
 
                 </RelativeLayout>
-
-                <com.google.android.material.divider.MaterialDivider
+<RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="15dp"
-                    app:dividerColor="@color/light_grey" />
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:minHeight="56dp"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="4dp"
                     >
 
                     <TextView
@@ -649,7 +570,7 @@
                         android:layout_centerInParent="true"
                         android:fontFamily="@font/lato_bold"
                         android:text="@string/settings_show_username_as_logo"
-                        android:textColor="?android:textColorPrimary"
+                        android:textColor="?attr/colorOnSurface"
                         android:textSize="@dimen/title_text_size" />
 
                     <com.google.android.material.switchmaterial.SwitchMaterial
@@ -662,17 +583,12 @@
                         app:thumbTint="?android:textColorSecondary" />
 
                 </RelativeLayout>
-
-                <com.google.android.material.divider.MaterialDivider
+<RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="15dp"
-                    app:dividerColor="@color/light_grey" />
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:minHeight="56dp"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="4dp"
                     >
 
                     <TextView
@@ -682,7 +598,7 @@
                         android:layout_centerInParent="true"
                         android:fontFamily="@font/lato_bold"
                         android:text="@string/settings_push_to_talk"
-                        android:textColor="?android:textColorPrimary"
+                        android:textColor="?attr/colorOnSurface"
                         android:textSize="@dimen/title_text_size" />
 
                     <com.google.android.material.switchmaterial.SwitchMaterial
@@ -695,17 +611,12 @@
                         app:thumbTint="?android:textColorSecondary" />
 
                 </RelativeLayout>
-
-                <com.google.android.material.divider.MaterialDivider
+<RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="15dp"
-                    app:dividerColor="@color/light_grey" />
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:minHeight="56dp"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="4dp"
                     >
 
                     <TextView
@@ -715,7 +626,7 @@
                         android:layout_centerInParent="true"
                         android:fontFamily="@font/lato_bold"
                         android:text="@string/settings_speakerphone_mode"
-                        android:textColor="?android:textColorPrimary"
+                        android:textColor="?attr/colorOnSurface"
                         android:textSize="@dimen/title_text_size" />
 
                     <Spinner
@@ -728,15 +639,7 @@
                         android:textSize="@dimen/options_text_size" />
 
                 </RelativeLayout>
-
-                <com.google.android.material.divider.MaterialDivider
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="15dp"
-                    app:dividerColor="@color/light_grey" />
-
-                <LinearLayout
+<LinearLayout
                     android:id="@+id/databasePasswordLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -747,7 +650,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/lato_bold"
                         android:text="@string/settings_database_password"
-                        android:textColor="?android:textColorPrimary"
+                        android:textColor="?attr/colorOnSurface"
                         android:textSize="@dimen/title_text_size" />
 
                     <TextView
@@ -757,19 +660,11 @@
                         android:gravity="end"
                         android:paddingRight="10dp"
                         android:fontFamily="@font/lato_regular"
-                        android:textColor="?android:textColorSecondary"
+                        android:textColor="?attr/colorPrimary"
                         android:textSize="@dimen/options_text_size" />
 
                 </LinearLayout>
-
-                <com.google.android.material.divider.MaterialDivider
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="15dp"
-                    app:dividerColor="@color/light_grey" />
-
-                <LinearLayout
+<LinearLayout
                     android:id="@+id/menuPasswordLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -780,7 +675,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/lato_bold"
                         android:text="@string/settings_menu_password"
-                        android:textColor="?android:textColorPrimary"
+                        android:textColor="?attr/colorOnSurface"
                         android:textSize="@dimen/title_text_size" />
 
                     <TextView
@@ -791,21 +686,16 @@
                         android:paddingEnd="10dp"
                         android:paddingStart="10dp"
                         android:fontFamily="@font/lato_regular"
-                        android:textColor="?android:textColorSecondary"
+                        android:textColor="?attr/colorPrimary"
                         android:textSize="@dimen/options_text_size" />
 
                 </LinearLayout>
-
-                <com.google.android.material.divider.MaterialDivider
+<RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="15dp"
-                    app:dividerColor="@color/light_grey" />
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:minHeight="56dp"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="4dp"
                     >
 
                     <TextView
@@ -815,7 +705,7 @@
                         android:layout_centerInParent="true"
                         android:fontFamily="@font/lato_bold"
                         android:text="@string/settings_hide_menus"
-                        android:textColor="?android:textColorPrimary"
+                        android:textColor="?attr/colorOnSurface"
                         android:textSize="@dimen/title_text_size" />
 
                     <com.google.android.material.switchmaterial.SwitchMaterial
@@ -828,17 +718,12 @@
                         app:thumbTint="?android:textColorSecondary" />
 
                 </RelativeLayout>
-
-                <com.google.android.material.divider.MaterialDivider
+<RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="15dp"
-                    app:dividerColor="@color/light_grey" />
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:minHeight="56dp"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="4dp"
                     >
 
                     <TextView
@@ -848,7 +733,7 @@
                         android:layout_centerInParent="true"
                         android:fontFamily="@font/lato_bold"
                         android:text="@string/settings_disable_call_history"
-                        android:textColor="?android:textColorPrimary"
+                        android:textColor="?attr/colorOnSurface"
                         android:textSize="@dimen/title_text_size" />
 
                     <com.google.android.material.switchmaterial.SwitchMaterial
@@ -861,17 +746,12 @@
                         app:thumbTint="?android:textColorSecondary" />
 
                 </RelativeLayout>
-
-                <com.google.android.material.divider.MaterialDivider
+<RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="15dp"
-                    app:dividerColor="@color/light_grey" />
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:minHeight="56dp"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="4dp"
                     >
 
                     <TextView
@@ -881,7 +761,7 @@
                         android:layout_centerInParent="true"
                         android:fontFamily="@font/lato_bold"
                         android:text="@string/settings_disable_proximity_sensor"
-                        android:textColor="?android:textColorPrimary"
+                        android:textColor="?attr/colorOnSurface"
                         android:textSize="@dimen/title_text_size" />
 
                     <com.google.android.material.switchmaterial.SwitchMaterial
@@ -896,26 +776,31 @@
                 </RelativeLayout>
 
             </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
 
-            <LinearLayout
-                android:id="@+id/expertSettingsLayout"
+                            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/expertSettingsCard"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="@dimen/padding_20"
-                android:layout_marginRight="@dimen/padding_20"
-                android:orientation="vertical"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginBottom="12dp"
+                app:cardBackgroundColor="?attr/colorSurfaceContainer"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp"
                 android:visibility="gone">
-
-                <com.google.android.material.divider.MaterialDivider
+                <LinearLayout
+                    android:id="@+id/expertSettingsLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="15dp"
-                    app:dividerColor="@color/light_grey" />
-
-                <RelativeLayout
+                    android:orientation="vertical"
+                    android:paddingVertical="8dp">
+<RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:minHeight="56dp"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="4dp"
                     >
 
                     <TextView
@@ -925,7 +810,7 @@
                         android:layout_centerInParent="true"
                         android:fontFamily="@font/lato_bold"
                         android:text="@string/settings_auto_accept_calls"
-                        android:textColor="?android:textColorPrimary"
+                        android:textColor="?attr/colorOnSurface"
                         android:textSize="@dimen/title_text_size" />
 
                     <com.google.android.material.switchmaterial.SwitchMaterial
@@ -938,17 +823,12 @@
                         app:thumbTint="?android:textColorSecondary" />
 
                 </RelativeLayout>
-
-                <com.google.android.material.divider.MaterialDivider
+<RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="15dp"
-                    app:dividerColor="@color/light_grey" />
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:minHeight="56dp"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="4dp"
                     >
 
                     <TextView
@@ -958,7 +838,7 @@
                         android:layout_centerInParent="true"
                         android:fontFamily="@font/lato_bold"
                         android:text="@string/settings_skip_startup_permission_check"
-                        android:textColor="?android:textColorPrimary"
+                        android:textColor="?attr/colorOnSurface"
                         android:textSize="@dimen/title_text_size" />
 
                     <com.google.android.material.switchmaterial.SwitchMaterial
@@ -971,17 +851,12 @@
                         app:thumbTint="?android:textColorSecondary" />
 
                 </RelativeLayout>
-
-                <com.google.android.material.divider.MaterialDivider
+<RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="15dp"
-                    app:dividerColor="@color/light_grey" />
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:minHeight="56dp"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="4dp"
                     >
 
                     <TextView
@@ -991,7 +866,7 @@
                         android:layout_centerInParent="true"
                         android:fontFamily="@font/lato_bold"
                         android:text="@string/settings_disable_cpu_overuse_detection"
-                        android:textColor="?android:textColorPrimary"
+                        android:textColor="?attr/colorOnSurface"
                         android:textSize="@dimen/title_text_size" />
 
                     <com.google.android.material.switchmaterial.SwitchMaterial
@@ -1004,15 +879,7 @@
                         app:thumbTint="?android:textColorSecondary" />
 
                 </RelativeLayout>
-
-                <com.google.android.material.divider.MaterialDivider
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="15dp"
-                    app:dividerColor="@color/light_grey" />
-
-                <LinearLayout
+<LinearLayout
                     android:id="@+id/publicKeyLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -1023,7 +890,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/lato_bold"
                         android:text="@string/settings_public_key"
-                        android:textColor="?android:textColorPrimary"
+                        android:textColor="?attr/colorOnSurface"
                         android:textSize="@dimen/title_text_size" />
 
                     <TextView
@@ -1036,21 +903,16 @@
                         android:fontFamily="@font/lato_regular"
                         android:textIsSelectable="true"
                         android:text=""
-                        android:textColor="?android:textColorSecondary"
+                        android:textColor="?attr/colorPrimary"
                         android:textSize="@dimen/options_text_size" />
 
                 </LinearLayout>
-
-                <com.google.android.material.divider.MaterialDivider
+<RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="15dp"
-                    app:dividerColor="@color/light_grey" />
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:minHeight="56dp"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="4dp"
                     >
 
                     <TextView
@@ -1060,7 +922,7 @@
                         android:layout_centerInParent="true"
                         android:fontFamily="@font/lato_bold"
                         android:text="@string/settings_disable_audio_processing"
-                        android:textColor="?android:textColorPrimary"
+                        android:textColor="?attr/colorOnSurface"
                         android:textSize="@dimen/title_text_size" />
 
                     <com.google.android.material.switchmaterial.SwitchMaterial
@@ -1073,17 +935,12 @@
                         app:thumbTint="?android:textColorSecondary" />
 
                 </RelativeLayout>
-
-                <com.google.android.material.divider.MaterialDivider
+<RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="15dp"
-                    app:dividerColor="@color/light_grey" />
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:minHeight="56dp"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="4dp"
                     >
 
                     <TextView
@@ -1093,7 +950,7 @@
                         android:layout_centerInParent="true"
                         android:fontFamily="@font/lato_bold"
                         android:text="@string/settings_video_hardware_acceleration"
-                        android:textColor="?android:textColorPrimary"
+                        android:textColor="?attr/colorOnSurface"
                         android:textSize="@dimen/title_text_size" />
 
                     <com.google.android.material.switchmaterial.SwitchMaterial
@@ -1106,15 +963,7 @@
                         app:thumbTint="?android:textColorSecondary" />
 
                 </RelativeLayout>
-
-                <com.google.android.material.divider.MaterialDivider
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="15dp"
-                    app:dividerColor="@color/light_grey" />
-
-                <LinearLayout
+<LinearLayout
                     android:id="@+id/connectTimeoutLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -1125,7 +974,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/lato_bold"
                         android:text="@string/settings_connect_timeout"
-                        android:textColor="?android:textColorPrimary"
+                        android:textColor="?attr/colorOnSurface"
                         android:textSize="@dimen/title_text_size" />
 
                     <TextView
@@ -1136,19 +985,11 @@
                         android:paddingEnd="10dp"
                         android:paddingStart="10dp"
                         android:fontFamily="@font/lato_regular"
-                        android:textColor="?android:textColorSecondary"
+                        android:textColor="?attr/colorPrimary"
                         android:textSize="@dimen/options_text_size" />
 
                 </LinearLayout>
-
-                <com.google.android.material.divider.MaterialDivider
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="15dp"
-                    app:dividerColor="@color/light_grey" />
-
-                <LinearLayout
+<LinearLayout
                     android:id="@+id/connectRetriesLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -1159,7 +1000,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/lato_bold"
                         android:text="@string/settings_connect_retries"
-                        android:textColor="?android:textColorPrimary"
+                        android:textColor="?attr/colorOnSurface"
                         android:textSize="@dimen/title_text_size" />
 
                     <TextView
@@ -1170,21 +1011,16 @@
                         android:paddingEnd="10dp"
                         android:paddingStart="10dp"
                         android:fontFamily="@font/lato_regular"
-                        android:textColor="?android:textColorSecondary"
+                        android:textColor="?attr/colorPrimary"
                         android:textSize="@dimen/options_text_size" />
 
                 </LinearLayout>
-
-                <com.google.android.material.divider.MaterialDivider
+<RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="15dp"
-                    app:dividerColor="@color/light_grey" />
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:minHeight="56dp"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="4dp"
                     >
 
                     <TextView
@@ -1194,7 +1030,7 @@
                         android:layout_centerInParent="true"
                         android:fontFamily="@font/lato_bold"
                         android:text="@string/settings_guess_eui64_address"
-                        android:textColor="?android:textColorPrimary"
+                        android:textColor="?attr/colorOnSurface"
                         android:textSize="@dimen/title_text_size" />
 
                     <com.google.android.material.switchmaterial.SwitchMaterial
@@ -1207,17 +1043,12 @@
                         app:thumbTint="?android:textColorSecondary" />
 
                 </RelativeLayout>
-
-                <com.google.android.material.divider.MaterialDivider
+<RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="15dp"
-                    app:dividerColor="@color/light_grey" />
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:minHeight="56dp"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="4dp"
                     >
 
                     <TextView
@@ -1227,7 +1058,7 @@
                         android:layout_centerInParent="true"
                         android:fontFamily="@font/lato_bold"
                         android:text="@string/settings_use_neighbor_table"
-                        android:textColor="?android:textColorPrimary"
+                        android:textColor="?attr/colorOnSurface"
                         android:textSize="@dimen/title_text_size" />
 
                     <com.google.android.material.switchmaterial.SwitchMaterial
@@ -1242,6 +1073,7 @@
                 </RelativeLayout>
 
             </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
 
         </LinearLayout>
 

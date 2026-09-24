@@ -6,4 +6,11 @@
     <color name="dark_grey">#6D6B6B</color>
     <color name="light_grey">#B1B1B1</color>
     <color name="lighter_grey">#D9D9D9</color>
+    <color name="m3_surface">#FFFBFE</color>
+    <color name="m3_on_surface">#1C1B1F</color>
+    <color name="m3_on_surface_variant">#49454F</color>
+    <color name="m3_surface_container">#F3EDF7</color>
+    <color name="m3_surface_container_high">#ECE6F0</color>
+    <color name="m3_outline">#79747E</color>
+    <color name="m3_outline_variant">#CAC4D0</color>
 </resources>
